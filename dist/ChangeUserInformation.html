@@ -6,8 +6,10 @@
 </head>
 <body id="type-b">
 	<div id="wrap">
-		<#INCLUDE filename="include_header.html">
-		<div id="content-wrap">
+		<header>
+			<#INCLUDE filename="include_header.html">
+		</header>
+		<main id="content-wrap">
 			<#INCLUDE filename="include_menu.html">
 			<div id="content" role="main" tabindex="-1">
 				<form action="ares.dll" method="post" name="ChangeUserInformation" class="f-wrap-request">
@@ -82,12 +84,12 @@
 					</fieldset>
 				</form>
 
-				<div id="footer" role="contentinfo">
+				<footer id="footer" role="contentinfo">
 					<p><#COPYRIGHT></p>
 					<#INCLUDE filename="include_footer.html">
-				</div>
+				</footer>
 			</div>
-		</div>
+		</main>
 	</div>
 </body>
 </html>
