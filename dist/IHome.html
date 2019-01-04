@@ -18,7 +18,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 	
 		
 		<div id="content">
-			<main role="main" tabindex="-1">
+			<main tabindex="-1">
 				<h1>Main Menu</h1>
 				<span style="background-color:#E6F4FF; font-size: 110%"><#STATUS class="fade"></span>
 				<#TABLE name="Course" class="instructor-table filterTable" headerText="Current Courses" LinkColumn="CourseNumber" Session="Current" Role="Instructor" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="Semester:Semester" column="ReserveItems:Reserve Items" footerText="<a href='<#Action action=10 form=2 value=IActiveCourseList>'>Also view upcoming courses</a>" NoDataAction="ShowMessage" NoDataMessage="No courses found.">			

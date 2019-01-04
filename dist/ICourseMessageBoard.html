@@ -20,7 +20,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 	
 			
 		<div id="content">
-			<main role="main" tabindex="-1">
+			<main tabindex="-1">
 				<h1>Message Board for <#COURSE field="CourseNumber"/></h1>
 				<a href="<#ACTION action="10" form="67" value="CourseID" valuetype="lookup"/>">New Topic</a>
 				<span style="padding-top: 5px"><#TABLE class="student-table" name="MessageBoard" headerText="Message Board" LinkColumn="Title" NoDataAction="ShowMessage" NoDataMessage="There are no messages yet."></span>
