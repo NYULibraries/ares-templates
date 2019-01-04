@@ -24,9 +24,9 @@
 						<table width="100%">
 							<caption>Course Search</caption>
 							<tr>
-								<td align="right">Course Number</td>
+								<td align="right" id="course_number_label">Course Number</td>
 								<td width="7%">
-									<select name="SearchCourseNumberMeth">
+									<select aria-labelledby="course_number_label" name="SearchCourseNumberMeth">
 										<option selected=selected>Contains</option>
 										<option>Starts with</option>
 									</select>
@@ -35,16 +35,16 @@
 							</tr>
 	
 							<tr>
-								<td align="right">Department</td>
+								<td align="right" id="department_label">Department</td>
 								<td colspan="2">
-									<input type="hidden" name="SearchDepartmentMeth" value="contains" />
+									<input aria-labelledby="department_label" type="hidden" name="SearchDepartmentMeth" value="contains" />
 									<label for="SearchDepartment"><#OPTION name="Custom" tagname="SearchDepartment" groupname="Department" addtopoption="" selectedvalue="<#USER field="Department">"></label>
 								</td>
 							</tr>
 							<tr>
-								<td align="right">Course Code</td>
+								<td align="right" id="course_code_label">Course Code</td>
 								<td width="7%">
-									<select name="SearchCourseCodeMeth">
+									<select aria-labelledby="course_code_label" name="SearchCourseCodeMeth">
 										<option selected=selected>Contains</option>
 										<option>Starts with</option>
 									</select>
@@ -52,9 +52,9 @@
 								<td><label for="SearchCourseCode"><input aria-label="Search by course code" type="text" name="SearchCourseCode" /></label></td>
 							</tr>
 							<tr>
-								<td align="right">Instructor</td>
+								<td align="right" id="instructor_label">Instructor</td>
 								<td width="7%">
-									<select name="SearchInstructorMeth">
+									<select aria-labelledby="instructor_label" name="SearchInstructorMeth">
 										<option selected=selected>Contains</option>
 										<option>Starts with</option>
 									</select>
@@ -62,9 +62,9 @@
 								<td><label for="SearchInstructor"><input aria-label="Search by course instructor" type="text" name="SearchInstructor" /></label></td>
 							</tr>
 							<tr>
-								<td align="right">Title</td>
+								<td align="right" id="title_label">Title</td>
 								<td width="7%">
-									<select name="SearchTitleMeth">
+									<select aria-labelledby="title_label" name="SearchTitleMeth">
 										<option selected=selected>Contains</option>
 										<option>Starts with</option>
 									</select>
@@ -72,9 +72,9 @@
 								<td><label for="SearchTitle"><input aria-label="Search by item title" type="text" name="SearchTitle" /></label></td>
 							</tr>
 							<tr>
-								<td align="right">Author</td>
+								<td align="right" id="author_label">Author</td>
 								<td width="7%">
-									<select name="SearchAuthorMeth">
+									<select aria-labelledby="author_label" name="SearchAuthorMeth">
 										<option selected=selected>Contains</option>
 										<option>Starts with</option>
 									</select>
@@ -85,7 +85,7 @@
 	
 								<td align="right" valign="top"></td>
 								<td colspan="2" class="<#CONDITIONAL Test='UseHotList' Type='CustomizationKey' False='hidden'>">
-									<input type="checkbox" name="HotListItems" /> Items must be on my favorites.
+									<label><input type="checkbox" name="HotListItems" /> Items must be on my favorites.</label>
 								</td>
 							</tr>
 							<tr>
