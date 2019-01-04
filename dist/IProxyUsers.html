@@ -29,7 +29,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 	
 				<h1 tabindex="0">Full Proxy Users</h1>
 				<p>Users in this list will have the ability to administer your courses and add new courses on your behalf. Add new users by entering their username below.</p>
-				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
 				<p><input name="ProxyUser" type="text" aria-label="Full Proxy's Username"/>&nbsp;<input id="AddProxyUser" type="submit" name="AddProxyUser" Value="Add Proxy User" class="f-submit"/></p>	
 				<#TABLE Name="Proxy" headerText="Proxy Users" class="instructor-table" DeleteText="Remove"  Type="Full" HideColumnHeaders="True" column="DeleteUsernameFirstnameLastname:Name" NoDataMessage="You currently have no full proxy users assigned." NoDataAction="ShowMessage" orderBy="lastname">
 				</form>			
