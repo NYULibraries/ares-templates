@@ -19,14 +19,14 @@
 						<fieldset>
 							<h1>New Ares Account</h1>
 							<legend class="offscreen">New Ares Account</legend>
-							<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+							<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
 	
 							<label for="Username"><#ERROR Name="ERRORUsername">                		                		
 								<strong>
 									<span class="req">*</span>
 									<span class="<#Validation name="ERRORUsername">">Username</span>
 								</strong>
-								<span class="fade" id="usernamespan" name="usernamespan"></span><input id="Username" name="UserName" onBlur="checkUniqueUsername(this.value); return false;" type="text" size="40" class="f-name" value="<#PARAM Name="Username"/>"><br />							
+								<span id="usernamespan" name="usernamespan"></span><input id="Username" name="UserName" onBlur="checkUniqueUsername(this.value); return false;" type="text" size="40" class="f-name" value="<#PARAM Name="Username"/>"><br />							
 							</label>
 	
 							<label for="FirstName"><#ERROR Name="ERRORFirstName">                		                		
