@@ -17,13 +17,15 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<#INCLUDE filename="include_menu.html">	
 	
 		
-		<div id="content" role="main" tabindex="-1">
-			<h1>Main Menu</h1>
-			<span style="background-color:#E6F4FF; font-size: 110%"><#STATUS class="fade"></span>
-			<#TABLE name="Course" class="instructor-table filterTable" headerText="Current Courses" LinkColumn="CourseNumber" Session="Current" Role="Instructor" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="Semester:Semester" column="ReserveItems:Reserve Items" footerText="<a href='<#Action action=10 form=2 value=IActiveCourseList>'>Also view upcoming courses</a>" NoDataAction="ShowMessage" NoDataMessage="No courses found.">			
-            <br/>
-			<#TABLE class="instructor-table filterTable" name="Item" headerText="Awaiting Supply By Instructor" ShowHiddenItems="True" LinkType="ItemEdit" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" ItemStatus="Awaiting Supply By Instructor" NoDataAction="ShowNothing">		
-
+		<div id="content">
+			<main role="main" tabindex="-1">
+				<h1>Main Menu</h1>
+				<span style="background-color:#E6F4FF; font-size: 110%"><#STATUS class="fade"></span>
+				<#TABLE name="Course" class="instructor-table filterTable" headerText="Current Courses" LinkColumn="CourseNumber" Session="Current" Role="Instructor" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" column="Semester:Semester" column="ReserveItems:Reserve Items" footerText="<a href='<#Action action=10 form=2 value=IActiveCourseList>'>Also view upcoming courses</a>" NoDataAction="ShowMessage" NoDataMessage="No courses found.">			
+	            <br/>
+				<#TABLE class="instructor-table filterTable" name="Item" headerText="Awaiting Supply By Instructor" ShowHiddenItems="True" LinkType="ItemEdit" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" ItemStatus="Awaiting Supply By Instructor" NoDataAction="ShowNothing">		
+	
+			</main>
 
 			<div id="footer" role="contentinfo">
 			<p><#COPYRIGHT></p>

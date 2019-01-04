@@ -19,10 +19,12 @@ var sessionid = '<#PARAM name="SessionID"/>';
 		<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
 	
 			
-		<div id="content" role="main" tabindex="-1">
-			<h1>Message Board for <#COURSE field="CourseNumber"/></h1>
-			<a href="<#ACTION action="10" form="67" value="CourseID" valuetype="lookup"/>">New Topic</a>
-			<span style="padding-top: 5px"><#TABLE class="student-table" name="MessageBoard" headerText="Message Board" LinkColumn="Title" NoDataAction="ShowMessage" NoDataMessage="There are no messages yet."></span>
+		<div id="content">
+			<main role="main" tabindex="-1">
+				<h1>Message Board for <#COURSE field="CourseNumber"/></h1>
+				<a href="<#ACTION action="10" form="67" value="CourseID" valuetype="lookup"/>">New Topic</a>
+				<span style="padding-top: 5px"><#TABLE class="student-table" name="MessageBoard" headerText="Message Board" LinkColumn="Title" NoDataAction="ShowMessage" NoDataMessage="There are no messages yet."></span>
+			</main>
 
 			<div id="footer" role="contentinfo">
 			<p><#COPYRIGHT></p>
