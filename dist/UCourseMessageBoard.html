@@ -16,10 +16,12 @@ var sessionid = '<#PARAM name="SessionID"/>';
 	<div id="content-wrap">
 		<#INCLUDE filename="include_studentcoursemenu.html">	
 			
-		<div id="content" role="main" tabindex="-1">
-			<h1>Message Board for <#COURSE field="CourseNumber"/></h1>
-			<a href="<#ACTION action="10" form="67" value="CourseID" valuetype="lookup"/>"><img src="images/newtopic.gif" alt="New Topic" title="Post a new topic to the message board"/></a>
-			<span style="padding-top: 5px"><#TABLE class="student-table" name="MessageBoard" headerText="Message Board" LinkColumn="Title" NoDataAction="ShowMessage" NoDataMessage="There are no messages yet."></span>
+		<div id="content">
+			<main role="main" tabindex="-1">
+				<h1>Message Board for <#COURSE field="CourseNumber"/></h1>
+				<a href="<#ACTION action="10" form="67" value="CourseID" valuetype="lookup"/>"><img src="images/newtopic.gif" alt="New Topic" title="Post a new topic to the message board"/></a>
+				<span style="padding-top: 5px"><#TABLE class="student-table" name="MessageBoard" headerText="Message Board" LinkColumn="Title" NoDataAction="ShowMessage" NoDataMessage="There are no messages yet."></span>
+			</main>
 
 			<div id="footer" role="contentinfo">
 			<p><#COPYRIGHT></p>

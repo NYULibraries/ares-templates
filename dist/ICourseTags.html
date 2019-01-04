@@ -19,22 +19,24 @@ var sessionid = '<#PARAM name="SessionID"/>';
 		<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
 
 
-        <div id="content" role="main" tabindex="-1"> 
-		<h1 class="offscreen">Course <#COURSE field="CourseNumber"/> Tags</h1>
-		<span style="background-color:#E6F4FF ;font-size: 110%"><#STATUS class="fade"/></span>
-		
-            <div class="instructor">
-			<#INCLUDE filename="include_defaultcourseinfo.html"/>
-			<div class="row"><p class="note">Email subscriptions allow you to receive an email notification when a new item becomes available in this course.<br/>
-				<#SUBSCRIBE notSubscribedText="You are currently <span class='error'>not</span> subscribed. " subscribedText="You are currently subscribed. " subscribeLink="Subscribe Now" unsubscribeLink="Please remove my subscription"/>
-			</p></div>				
-            </div>
-
-			<h4>Filter by item tag:</h4>
-	    <#TAGCLOUD TagType="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" /><br/><br/>
-
-	 Current Filter: <#PARAM name="Tag" /> | <a href="<#ACTION action="10" form="60" ValueType="Lookup" Value="CourseID">">View all Items for <#COURSE field="CourseNumber" /></a>	
-         <#TABLE class="instructor-table filterTable" name="Item" type="CourseItems" headerText="Reserve Items" LinkType="ItemInfo" LinkColumn="BothTitles" column="BothTitles:Title" column="Author:Author" column="inactiveDate:Inactive" column="CurrentStatus:Status" column="UserViewed" column="Tags:Tags" UnreadItem="<img src='images/new.gif' alt='New Item'/>" ReadItem="<img src='images/itemviewed.gif' alt='PreviouslyViewed'/>" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course." allowsort="true">
+        <div id="content"> 
+		<main role="main" tabindex="-1">
+			<h1 class="offscreen">Course <#COURSE field="CourseNumber"/> Tags</h1>
+			<span style="background-color:#E6F4FF ;font-size: 110%"><#STATUS class="fade"/></span>
+			
+	            <div class="instructor">
+				<#INCLUDE filename="include_defaultcourseinfo.html"/>
+				<div class="row"><p class="note">Email subscriptions allow you to receive an email notification when a new item becomes available in this course.<br/>
+					<#SUBSCRIBE notSubscribedText="You are currently <span class='error'>not</span> subscribed. " subscribedText="You are currently subscribed. " subscribeLink="Subscribe Now" unsubscribeLink="Please remove my subscription"/>
+				</p></div>				
+	            </div>
+	
+				<h4>Filter by item tag:</h4>
+		    <#TAGCLOUD TagType="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" /><br/><br/>
+	
+		 Current Filter: <#PARAM name="Tag" /> | <a href="<#ACTION action="10" form="60" ValueType="Lookup" Value="CourseID">">View all Items for <#COURSE field="CourseNumber" /></a>	
+	         <#TABLE class="instructor-table filterTable" name="Item" type="CourseItems" headerText="Reserve Items" LinkType="ItemInfo" LinkColumn="BothTitles" column="BothTitles:Title" column="Author:Author" column="inactiveDate:Inactive" column="CurrentStatus:Status" column="UserViewed" column="Tags:Tags" UnreadItem="<img src='images/new.gif' alt='New Item'/>" ReadItem="<img src='images/itemviewed.gif' alt='PreviouslyViewed'/>" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course." allowsort="true">
+		</main>
 
             <div id="footer" role="contentinfo">
               <p><#COPYRIGHT></p>

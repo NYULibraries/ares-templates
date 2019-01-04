@@ -17,10 +17,12 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<#INCLUDE filename="include_menu.html">	
 	
 		
-		<div id="content" role="main" tabindex="-1">
-			<h1 class="offscreen">Item <#ITEM field="ItemID"/></h1>
-			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
-			<#TABLE name="Course" class="instructor-table filterTable" headerText="Previous Courses" LinkColumn="CourseNumber" Session="Previous" Role="Instructor" column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">		
+		<div id="content">
+			<main role="main" tabindex="-1">
+				<h1 class="offscreen">Item <#ITEM field="ItemID"/></h1>
+				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+				<#TABLE name="Course" class="instructor-table filterTable" headerText="Previous Courses" LinkColumn="CourseNumber" Session="Previous" Role="Instructor" column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">		
+			</main>
 
 			<div id="footer" role="contentinfo">
 			<p><#COPYRIGHT></p>

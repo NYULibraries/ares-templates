@@ -16,15 +16,17 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<#INCLUDE filename="include_menu.html">	
 	
 		
-		<div id="content" role="main" tabindex="-1">
-			<h1 class="offscreen"><#CUSTOMIZATION name='HotListName'></h1>
-			<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
-
-			<form name="HotList" method="post" action="ares.dll">
-			<input type="hidden" name="action" value="20" />
-			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>		
-			<#TABLE class="student-table filterTable" name="Item" headerText="My Favorites" LinkType="ItemInformation" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" HotList="Yes" hotListAdd="False" hotListAddText="Add checked items to <#CUSTOMIZATION name='HotListName'>" hotListDelete="True" hotListDeleteText="Remove checked items from <#CUSTOMIZATION name='HotListName'>" ONLYHotListItems="Yes" NoDataAction="ShowMessage" NoDataMessage="No items found.">
-			</form>
+		<div id="content">
+			<main role="main" tabindex="-1">
+				<h1 class="offscreen"><#CUSTOMIZATION name='HotListName'></h1>
+				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS class="fade"></span>
+	
+				<form name="HotList" method="post" action="ares.dll">
+				<input type="hidden" name="action" value="20" />
+				<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>		
+				<#TABLE class="student-table filterTable" name="Item" headerText="My Favorites" LinkType="ItemInformation" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" HotList="Yes" hotListAdd="False" hotListAddText="Add checked items to <#CUSTOMIZATION name='HotListName'>" hotListDelete="True" hotListDeleteText="Remove checked items from <#CUSTOMIZATION name='HotListName'>" ONLYHotListItems="Yes" NoDataAction="ShowMessage" NoDataMessage="No items found.">
+				</form>
+			</main>
 
 			<div id="footer" role="contentinfo">
 			<p><#COPYRIGHT></p>

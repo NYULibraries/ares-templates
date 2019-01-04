@@ -22,14 +22,16 @@ var sessionid = '<#PARAM Name="SessionID">';
 	
 		
 		
-		<div id="content" role="main" tabindex="-1">
-		<h1>Reserve Usage for <#COURSE field="Name"></h1>
-            <div class="instructor">
-			<#INCLUDE filename="include_defaultcourseinfo.html">
-            </div>
-			
-		<#TABLE Name="CourseUsage" class="instructor-table-nohover" HeaderText="Reserve Item Usage" AllowSort="True" NoDataMessage="No items have been viewed yet." NoDataAction="ShowMessage" ShowDetailLink="True" DetailLinkText="Show Detailed Usage">
-
+		<div id="content">
+		<main role="main" tabindex="-1">
+			<h1>Reserve Usage for <#COURSE field="Name"></h1>
+	            <div class="instructor">
+				<#INCLUDE filename="include_defaultcourseinfo.html">
+	            </div>
+				
+			<#TABLE Name="CourseUsage" class="instructor-table-nohover" HeaderText="Reserve Item Usage" AllowSort="True" NoDataMessage="No items have been viewed yet." NoDataAction="ShowMessage" ShowDetailLink="True" DetailLinkText="Show Detailed Usage">
+	
+		</main>
 
 
 			<div id="footer" role="contentinfo">
