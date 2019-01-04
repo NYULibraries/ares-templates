@@ -11,7 +11,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 <div id="wrap"> <#INCLUDE filename="include_header.html">
     <div id="content-wrap"> <#INCLUDE filename="include_studentcoursemenu.html">
         <div id="content"> 
-		<main role="main" tabindex="-1">
+		<main tabindex="-1">
 			<h1>Are you sure you want to remove this course?</h1>
 			<span class="note">By removing this course you will no longer have access to this course or reserve items in this course.<span class="<#CONDITIONAL Test='UseHotList' Type='CustomizationKey' False='hidden'>"> Any items in your <#CUSTOMIZATION name='HotListName'> that are associated with this course will also be removed from your <#CUSTOMIZATION name='HotListName'>.</span></span>
 				<br/><a href="<#ACTION action="22" type="11">&CourseID=<#COURSE field="CourseID">"><span style="font-size: 1.4em;">Yes</span></a>&nbsp;&nbsp;<a href="<#ACTION action="10" form="63" ValueType="Lookup" Value="CourseID">"><span  style="font-size: 1.4em;">No</span></a> 
