@@ -4,28 +4,31 @@
         <fieldset>
             <h3 tabindex="0">Batch Edit</h3>
 
-            <label for="tagger">
-				<strong tabindex="0"><span class="req">*</span>Tag Type:</strong>
-				<fieldset>	
-					<legend class="offscreen">Tag Type</legend>
-					<label for="courseTagger">
+
+            <fieldset>	
+                <legend>
+                    <strong>Tag Type:<span class="req" aria-hidden="true">*</span></strong></legend>
+                <fieldset>
+                    <label for="courseTagger">
                         <input id="courseTagger" type="radio" class="f-radio" checked="checked" name="tagger" value="INSTRUCTOR" /> 
                         Instructor Tag
                     </label>
-						
+                        
                     <label for="personalTagger">
-			            <input id="personalTagger" type="radio" class="f-radio" name="tagger" value="<#USER field=Username>"/>
+                        <input id="personalTagger" type="radio" class="f-radio" name="tagger" value="<#USER field=Username>"/>
                         Personal Tag
                     </label>						
-					
-					
-				</fieldset>
-			</label>
+                </fieldset>
+            </fieldset>
 
 
             <label for="tag">
-                <strong><span class="req">*</span>Tag:</strong>
-			    <input type=text id="tag" class="f-name" name="tag" /><br>
+                <strong>
+                    Tag:
+                    <span class="req" aria-hidden="true">*</span>
+                </strong>
+                
+			    <input type=text id="tag" class="f-name" name="tag" aria-required="true" required="true" /><br>
 		    </label>
 
             <div class="f-submit-wrap">                
