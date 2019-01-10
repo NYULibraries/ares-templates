@@ -31,13 +31,13 @@ var sessionid = '<#PARAM Name="SessionID">';
 				<div class="row"><#ITEM field="BuildURL" freeText="False" linkText="<img src='images/new-win-icon.gif' height='16' width='16' alt='View item in new window' aria-hidden='true' /> View this item"></div>						
 				</div>											
 	
-			<form action="ares.dll/Upload" method="POST" enctype='multipart/form-data' >
-			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
-			<input type="hidden" name="Username" value="<#USER field="Username">"/> 
-			<input type="hidden" name="ItemIDs" value="<#PARAM name="ItemIDs">"> 
-				<span tabindex="0">Choose a file to upload: <input type="file" name="ItemFileLocation" title="Browse for file to upload." /></span>
-				<input type="submit" name="SubmitButton" value="Submit Item" class="f-submit"/>
-			</form>
+				<form data-accessibility="true" action="ares.dll/Upload" method="POST" enctype='multipart/form-data' >
+					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+					<input type="hidden" name="Username" value="<#USER field="Username">"/> 
+					<input type="hidden" name="ItemIDs" value="<#PARAM name="ItemIDs">"> 
+					<label tabindex="0">Choose a file to upload: <input type="file" name="ItemFileLocation" title="Browse for file to upload." /></label>
+					<input type="submit" name="SubmitButton" value="Submit Item" class="f-submit"/>
+				</form>
 			</main>
 
 			<div id="footer" role="contentinfo">

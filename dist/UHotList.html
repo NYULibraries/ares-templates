@@ -21,7 +21,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 				<h1 class="offscreen"><#CUSTOMIZATION name='HotListName'></h1>
 				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
 	
-				<form name="HotList" method="post" action="ares.dll">
+				<form data-accessibility="true" name="HotList" method="post" action="ares.dll">
 				<input type="hidden" name="action" value="20" />
 				<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>		
 				<#TABLE class="student-table filterTable" name="Item" headerText="My Favorites" LinkType="ItemInformation" LinkColumn="BothTitlesIcon" column="BothTitlesIcon:Title" column="Author:Author" column="Department:Department" column="CourseNumber:Course" HotList="Yes" hotListAdd="False" hotListAddText="Add checked items to <#CUSTOMIZATION name='HotListName'>" hotListDelete="True" hotListDeleteText="Remove checked items from <#CUSTOMIZATION name='HotListName'>" ONLYHotListItems="Yes" NoDataAction="ShowMessage" NoDataMessage="No items found.">

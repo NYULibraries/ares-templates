@@ -20,7 +20,7 @@
 					<div class="instructor">
 						<#INCLUDE filename="include_defaultcourseinfo.html">		
 					</div>	
-					<form method="post" action="ares.dll" class="f-wrap-request">
+					<form data-accessibility="true" method="post" action="ares.dll" class="f-wrap-request">
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>
 						<input type="hidden" name="action" value="11"/>
 						<input type="hidden" name="CourseID" value="<#COURSE field="CourseID"/>"/>				
@@ -30,9 +30,8 @@
 					
 						<#TABLE Name="AuthorizedUsers" headerText="Authorized Users" class="instructor-table-nohover" NoDataMessage="There are currently no students in this course." NoDataAction="ShowMessage" orderBy="LastName">
 						
-						<fieldset>
-							<h2 tabindex="0">Add Authorized Users</h1>
-							<legend class="offscreen">Add Authorized Users</legend>
+						<fieldset aria-labelledby="add_authorized_users_heading">
+							<h2 tabindex="0" id="add_authorized_users_heading">Add Authorized Users</h1>
 							<label for="AddAuthorizedUsers"><#ERROR Name="ERRORAddAuthorizedUsers">
 								<strong>
 									<span class="<#VALIDATION name="ERRORAddAuthorizedUsers">">Enter Student ID Numbers separated by lines.</span><br />
@@ -42,8 +41,9 @@
 							</label>
 							<input class="f-submit" style="margin-left: 61%" type="submit" name="SubmitButton" value="Add Authorized Users"/>
 							<br />
-							
-							<h2 tabindex="0">Remove Authorized Users</h2>
+						</fieldset>
+						<fieldset aria-labelledby="remove_authorized_users_heading">
+							<h2 tabindex="0" id="remove_authorized_users_heading">Remove Authorized Users</h2>
 							<label for="RemoveAuthorizedUsers"><#ERROR Name="ERRORRemoveAuthorizedUsers">
 								<strong>
 									<span class="<#VALIDATION name="ERRORRemoveAuthorizedUsers">">Enter Student ID Numbers separated by lines.</span><br />
