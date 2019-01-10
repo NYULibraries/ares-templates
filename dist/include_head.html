@@ -109,7 +109,8 @@
 
 	<script type="text/javascript">
 		$(function() {
-			$('input[type="text"]').not('[aria-label]').each( function() { $(this).attr('aria-label', $(this).attr('title')) } );
+			$('input[type="text"],input[type="checkbox"]').not('[aria-label]').each( function() { $(this).attr('aria-label', $(this).attr('title')) } );
 			$('#ItemTable').find('[id^="ItemTags"]').filter(':empty').html($('<span />').addClass('sr-only').html('no tags'));
+			// $('th:empty').html($('<span />').addClass('sr-only').html('&nbsp'))
 		});
 	</script>
