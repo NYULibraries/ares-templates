@@ -1,25 +1,23 @@
 <div id="batchMenu" style="display:none; clear: both">
     <form id="batchForm" name="BatchTag" class="f-wrap-request">
 		<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-        <fieldset>
-            <h3 tabindex="0">Batch Edit</h3>
+        <fieldset aria-labelledby="batch_edit_label">
+            <h3 tabindex="0" id="batch_edit_label">Batch Edit</h3>
 
+            <label>
+                <strong id="tag_type_label">
+                    Tag Type:
+                    <span class="req" aria-hidden="true">*</span>
+                </strong>
 
-            <fieldset>	
-                <legend>
-                    <strong>Tag Type:<span class="req" aria-hidden="true">*</span></strong></legend>
-                <fieldset>
-                    <label for="courseTagger">
-                        <input id="courseTagger" type="radio" class="f-radio" checked="checked" name="tagger" value="INSTRUCTOR" /> 
-                        Instructor Tag
-                    </label>
+                <fieldset aria-labelledby="tag_type_label" class="fields">
+                    <input aria-labelledby="tag_type_instructor_label" aria-required="true" required="true" id="courseTagger" type="radio" class="f-radio" checked="checked" name="tagger" value="INSTRUCTOR" /> 
+                    <span id="tag_type_instructor_label">Instructor Tag</span>
                         
-                    <label for="personalTagger">
-                        <input id="personalTagger" type="radio" class="f-radio" name="tagger" value="<#USER field=Username>"/>
-                        Personal Tag
-                    </label>						
-                </fieldset>
-            </fieldset>
+                    <input aria-labelledby="tag_type_personal_label" id="personalTagger" type="radio" class="f-radio" name="tagger" value="<#USER field=Username>"/>
+                    <span id="tag_type_personal_label">Personal Tag</span>
+                </fieldset>				
+            </label>
 
 
             <label for="tag">
@@ -28,7 +26,7 @@
                     <span class="req" aria-hidden="true">*</span>
                 </strong>
                 
-			    <input type=text id="tag" class="f-name" name="tag" aria-required="true" required="true" /><br>
+			    <input type="text" id="tag" class="f-name" name="tag" aria-required="true" required="true" /><br>
 		    </label>
 
             <div class="f-submit-wrap">                
