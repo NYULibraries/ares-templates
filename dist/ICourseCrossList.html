@@ -33,7 +33,7 @@
 					
 					<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
 					
-					<form method="post" action="ares.dll" class="f-wrap-request">
+					<form data-accessibility="true" method="post" action="ares.dll" class="f-wrap-request">
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>
 						<input type="hidden" name="action" value="11"/>
 						<input type="hidden" name="type" value="122"/>
@@ -42,25 +42,24 @@
 						<input type="hidden" name="CourseID" value="<#COURSE field="CourseID">"/>
 						
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h2 tabindex="0">Add a cross-listing</h2>
-							<legend class="offscreen">Add a cross-listing</legend>
+						<fieldset aria-labelledby="add_crosslisting_heading">
+							<h2 tabindex="0" id="add_crosslisting_heading">Add a cross-listing</h2>
 	
 							<label for="Department"><#ERROR name="ERRORDepartment">
 								<strong>
-									<span class="req">*</span>
-									<span class="<#VALIDATION Name="ERRORDepartment">">Cross Listed Department</span>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION Name="ERRORDepartment">">Cross Listed Department <span class="sr-only">(required)</span></span>
 								</strong>
 								<#OPTION name="Custom" GroupName="Department" SelectedValue="<#PARAM name=Department>" Size="1"><br/>
 							</label>
 						
 							<label for="CourseNumber"><#ERROR name="ERRORCourseNumber">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION Name="ERRORCourseNumber">">Cross Listed Course Number</span><br />
 									<span class="note">e.g. MAT-101</span>
 								</strong>
-								<input id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="CourseNumber">" /><br />
+								<input aria-required="true" required="true" id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="CourseNumber">" /><br />
 							</label>
 	
 							<label for="CourseName"><#ERROR name="ERRORCourseName">

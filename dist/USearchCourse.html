@@ -24,7 +24,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 				<div class="student">
 				<div class="header">Search by Department</div>
 				<div class="row">
-					<form name="CourseSearch" action="ares.dll" method="post">
+					<form data-accessibility="true" name="CourseSearch" action="ares.dll" method="post">
 				      <input type="hidden" name="Action" value="11"/>
 		                  <input type="hidden" name="Form" value="63"/>							
 	 	                  <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">"> 
@@ -36,7 +36,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 				<div class="student">
 				<div class="header">Search by Instructor</div>
 				<div class="row">
-					<form name="CourseSearch" action="ares.dll" method="post">
+					<form data-accessibility="true" name="CourseSearch" action="ares.dll" method="post">
 					<input type="hidden" name="Action" value="11"/>
 	            	<input type="hidden" name="Form" value="63"/>							
 	                <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
@@ -48,20 +48,20 @@ var sessionid = '<#PARAM Name="SessionID">';
 				<div class="student">
 				<div class="header">Search by Course</div>
 				<div class="row">
-					<form name="CourseSearch" action="ares.dll" method="post">
+					<form data-accessibility="true" name="CourseSearch" action="ares.dll" method="post">
 					<input type="hidden" name="Action" value="11"/>
 	      	            <input type="hidden" name="Form" value="63"/>							
 	            		<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
 	
-					<select title="Course Field" name="CourseField"  style="width: 135px">
+					<select aria-label="Course Field" title="Course Field" name="CourseField" style="width: 135px">
 						<option selected="selected">Course Number</option><option>Course Name</option>
 						<option>Course Code</option>
 					</select>
-					<select title="Search Condition" name="CourseType" style="width: 90px">
+					<select aria-label="Search Condition" title="Search Condition" name="CourseType" style="width: 90px">
 						<option selected="selected">Starts with</option>
 						<option>Contains</option>
 					</select>
-					<input type="text" name="Course" title="Course search term" /><input type="submit" name="CourseSearch" value="Go" class="f-submit"/></form>
+					<input type="text" name="Course" aria-label="Course search term" title="Course search term" /><input type="submit" name="CourseSearch" value="Go" class="f-submit"/></form>
 				</div>
 				</div>
 			</main>

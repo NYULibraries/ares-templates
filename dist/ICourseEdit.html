@@ -16,7 +16,7 @@
 			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="CourseEdit" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CourseEdit" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11">
 						<input type="hidden" name="Type" value="31">
 						<input type="hidden" name="CourseID" value="<#Course field="CourseID">">
@@ -24,18 +24,17 @@
 						
 						<div class="req"><p tabindex="0"><strong>*</strong> Indicates required field</p></div>
 						
-						<fieldset>
-							<h1 tabindex="0">Edit Course: <#COURSE field="Name"></h1>
-							<legend class="offscreen">Edit Course: <#COURSE field="Name"></legend>
+						<fieldset aria-labelledby="edit_course_heading">
+							<h1 tabindex="0" id="edit_course_heading">Edit Course: <#COURSE field="Name"></h1>
 							<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
 							<h2 tabindex="0">Course Information</h2>
 							
 							<label for="CourseName"><#ERROR name="ERRORCourseName">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORCourseName">">Course Name</span>
 								</strong>
-								<input id="CourseName" name="CourseName" type="text" size="40" class="f-name" value="<#PARAM name="CourseName">"><br />
+								<input aria-required="true" required="true" id="CourseName" name="CourseName" type="text" size="40" class="f-name" value="<#PARAM name="CourseName">"><br />
 							</label>
 	
 							<!--
@@ -49,11 +48,11 @@
 				
 							<label for="CourseNumber"><#ERROR name="ERRORCourseNumber">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORCourseNumber">">Course Number</span><br/>
 									<span class="note">e.g. MAT-101</span>
 								</strong>
-								<input id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="CourseNumber">"><br />
+								<input aria-required="true" required="true" id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="CourseNumber">"><br />
 							</label>
 							
 							<label for="CourseCode"><#ERROR name="ERRORCourseCode">
@@ -65,15 +64,15 @@
 							
 							<label for="Department"><#ERROR name="ERRORDepartment">
 								<strong>
-									<span class="req">*</span>
-									<span class="<#VALIDATION name="ERRORDepartment">">Department</span>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORDepartment">">Department <span class="sr-only">(required)</span></span>
 								</strong>
 								<#OPTION name="Custom" GroupName="Department" SelectedValue="<#PARAM name=department>" Size="1"><br/>
 							</label>
 							<label for="Semester"><#ERROR name="ERRORCourseSemester">
 								<strong>
-									<span class="req">*</span>
-									<span class="<#VALIDATION name="ERRORCourseSemester">">Course Semester</span>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORCourseSemester">">Course Semester <span class="sr-only">(required)</span></span>
 								</strong>
 								<#OPTION name="Semester" SelectedValue="<#PARAM name=Semester>" class="f-name">
 								<br/>
@@ -102,11 +101,11 @@
 	
 							<label for="CourseInstructor"><#ERROR name="ERRORCourseInstructor">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORCourseInstructor">">Course Instructor</span><br/>
 									<span class="note">(Last Name, First Name)</span>
 								</strong>
-								<input type="text" class="f-name" id="CourseInstructor" name="CourseInstructor" value="<#PARAM name="CourseInstructor">"/>
+								<input aria-required="true" required="true" type="text" class="f-name" id="CourseInstructor" name="CourseInstructor" value="<#PARAM name="CourseInstructor">"/>
 							</label>
 							
 							 <label for="CoursePassword"><#ERROR name="ERRORCoursePassword">

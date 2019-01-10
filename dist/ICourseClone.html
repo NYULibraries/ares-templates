@@ -17,7 +17,7 @@
 			<div id="content">
 				<main tabindex="-1">
 					<h1 class="offscreen">Clone Course</h1>
-					<form action="ares.dll" method="post" name="CreateCourse" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateCourse" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11">
 						<input type="hidden" name="Form" value="114">
 						<input type="hidden" name="OldCourseID" value="<#COURSE field="CourseID"/><#PARAM name="OldCourseID"/>"/>
@@ -26,9 +26,8 @@
 						<input type="hidden" name="IncludeXListInfo" value="On">
 	
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h2 tabindex="0">Clone course: <#COURSE field="Name"/></h2>
-							<legend class="offscreen">Clone course: <#COURSE field="Name"/></legend>
+						<fieldset aria-labelledby="clone_course_heading">
+							<h2 tabindex="0" id="clone_course_heading">Clone course: <#COURSE field="Name"/></h2>
 	
 							<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
 							<h3 tabindex="0">New Course</h3>
@@ -43,18 +42,18 @@
 				-->
 							<label for="CourseName"><#ERROR name="ERRORCourseName">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#Validation name="ERRORCourseName">">Course Name</span>
 								</strong>
-								<input type="text" class="f-name" id="CourseName" name="CourseName" value="<#PARAM name=CourseName>" size="40" /><br />
+								<input aria-required="true" required="true" type="text" class="f-name" id="CourseName" name="CourseName" value="<#PARAM name=CourseName>" size="40" /><br />
 							</label>
 	
 							<label for="CourseNumber"><#ERROR name="ERRORCourseNumber">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#Validation name="ERRORCourseNumber">">Course Number</span>
 								</strong>
-								<input id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="coursenumber">" /><br />
+								<input aria-required="true" required="true" id="CourseNumber" name="CourseNumber" type="text" size="40" class="f-name" value="<#PARAM name="coursenumber">" /><br />
 							</label>
 	
 							<label for="CourseCode"><#ERROR name="ERRORCourseCode">
@@ -66,24 +65,24 @@
 	
 							<label for="CourseInstructor"><#ERROR name="ERRORCourseInstructor">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#Validation name="ERRORCourseInstructor">">Instructor</span>
 								</strong>
-								<input id="CourseInstructor" name="CourseInstructor" type="text" size="40" class="f-name" value="<#PARAM name="CourseInstructor">" /><br />
+								<input aria-required="true" required="true" id="CourseInstructor" name="CourseInstructor" type="text" size="40" class="f-name" value="<#PARAM name="CourseInstructor">" /><br />
 							</label>
 	
 							<label for="Department"><#ERROR name="ERRORDepartment">
 								<strong>
-									<span class="req">*</span>
-									<span class="<#VALIDATION name="ERRORDepartment">">Department</span>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORDepartment">">Department <span class="sr-only">(required)</span></span>
 								</strong>
 								<#OPTION name="Custom" GroupName="Department" SelectedValue="<#PARAM name=department>" Size="1"><br/>
 							</label>
 	
 							<label for="Semester"><#ERROR name="ERRORCourseSemester">
 								<strong>
-									<span class="req">*</span>
-									<span class="<#VALIDATION name="ERRORCourseSemester">">Course Semester</span><br/>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORCourseSemester">">Course Semester <span class="sr-only">(required)</span></span><br/>
 									<span class="note">Choose the semester when you will be teaching this course again</span>
 								</strong>
 								<#OPTION name="Semester" class="f-name" onChange="GetSemesterStartStop(document.getElementById('Semester').value);"/><br/>
@@ -118,7 +117,7 @@
 							<label for="CloneItemTags"><#ERROR name="ERRORCloneItemTags">
 								<strong>
 									<span class="<#VALIDATION name="ERRORCloneItemTags">">Clone Item Tags</span><br/>
-									</strong>
+								</strong>
 								<input type="checkbox" id="CloneItemTags" name="CloneItemTags" class="f-checkbox" /><br />
 							</label>
 	

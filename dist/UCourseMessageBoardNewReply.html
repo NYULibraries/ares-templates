@@ -19,7 +19,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 			
 		<div id="content">
 			<main tabindex="-1">
-				<form name="MessageBoardPost" action="ares.dll" class="f-wrap-1" method="post">
+				<form data-accessibility="true" name="MessageBoardPost" action="ares.dll" class="f-wrap-1" method="post">
 					<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>
 					<input type="hidden" name="Value" value="<#PARAM name="Value"/>"/>
 	                <input type="hidden" name="Form" value="<#PARAM name="form"/>">
@@ -32,8 +32,8 @@ var sessionid = '<#PARAM name="SessionID"/>';
 	               	
 						<label for="message">
 	                		<#ERROR name="ERRORMessage">
-	                		<strong><span class="req">*</span>Message</strong>
-							<textarea id="message" name="message" rows="15" cols="30" style="width: 80%" class="f-name"><#PARAM name="Message"></textarea>
+	                		<strong><span aria-hidden="true" class="req">*</span>Message</strong>
+							<textarea aria-required="true" required="true" id="message" name="message" rows="15" cols="30" style="width: 80%" class="f-name"><#PARAM name="Message"></textarea>
 							<script>
 								CKEDITOR.replace( 'message', {
 									toolbar: [
