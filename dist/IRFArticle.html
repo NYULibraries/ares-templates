@@ -13,7 +13,7 @@
 			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="createitem" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="createitem" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11"/>        
 						<input type="hidden" name="Type" value="10"/>	
 						<input type="hidden" name="CopyrightRequired" value="No"/>
@@ -140,7 +140,7 @@
 									<span class="<#VALIDATION name="ERRORSupplyMethod">" tabindex="0">How will this item be supplied?</span>
 								</strong>
 							
-								<fieldset aria-labelledby="supply_method_label" class="fields" style="float:left;width:35%;">					
+								<fieldset aria-labelledby="supply_method_label" class="fields">					
 									<input aria-labelledby="supply_method_file_label" id="File" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="File"> name="SupplyMethod" value="File" class="f-radio" />
 									<span id="supply_method_file_label">I will upload a file</span>
 									<br />
