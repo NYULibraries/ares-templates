@@ -14,51 +14,54 @@
 			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<div>
-						<h1>What would you like to add to this Shared List?</h1>
-	
-						<span class="irf-menu-item-icon">
-							<a href="<#ACTION action="10" form="23" valuetype="Lookup" value="SharedList">">
-								<img src="images/large/docs_32.gif" height="32" width="32" alt="Article" title="Article"/><br/><span aria-hidden="true">Article</span>
-							</a>
-						</span>
-						
-						<span class="irf-menu-item-icon">
-							<a href="<#ACTION action="10" form="2" value="ISLRFBookChapter">&SharedListID=<#SHAREDLIST field="ListID">">
-								<img src="images/large/hist_32.gif" height="32" width="32" alt="Chapter" title="Chapter"/><br/><span aria-hidden="true">Chapter</span>
-							</a>
-						</span>
-	
-						<span class="irf-menu-item-icon">
-							<a href="<#ACTION action="10" form="2" value="ISLRFBook">&SharedListID=<#SHAREDLIST field="ListID">">
-								<img src="images/large/book03.gif" height="32" width="32" alt="Book" title="Book"/><br/><span aria-hidden="true">Book</span>
-							</a>
-						</span>
-	
-						<span class="irf-menu-item-icon">
-							<a href="<#ACTION action="10" form="2" value="ISLRFInstructorUpload">&SharedListID=<#SHAREDLIST field="ListID">">
-								<img src="images/large/foldr_32.gif" height="32" width="32" alt="File Upload" title="File Upload"/><br/><span aria-hidden="true">File Upload</span>
-							</a>
-						</span>
-	
-						<span class="irf-menu-item-icon">
-							<a href="<#ACTION action="10" form="24" valuetype="Lookup" value="SharedList">">
-								<img src="images/large/notep_32.gif" height="32" width="32" alt="Create Reserve material on-the-fly" title="Create Reserve material on-the-fly"/><br/><span aria-hidden="true">Free Text</span>
-							</a>
-						</span>
-	
-						<span class="irf-menu-item-icon">
-							<a href="<#ACTION action="10" form="2" value="ISLRFAudio">&SharedListID=<#SHAREDLIST field="ListID">">
-								<img src="images/large/music_32.gif" height="32" width="32" alt="Audio" title="Audio"/><br/><span aria-hidden="true">Audio</span>
-							</a>
-						</span>
-	
-						<span class="irf-menu-item-icon">
-							<a href="<#ACTION action="10" form="2" value="ISLRFVideo">&SharedListID=<#SHAREDLIST field="ListID">">
-								<img src="images/large/video_32.gif" height="32" width="32" alt="Video" title="Video"/><br/><span aria-hidden="true">Video</span>
-							</a>
-						</span>
-					</div>
+					<nav class="reserve_actions" aria-labelledby="shared_reserve_actions_menu">
+							<h1 id="reserve_actions_menu">What would you like to add to this Shared List?</h1>
+							<ul>
+								<li>
+									<a href="<#ACTION action="10" form="23" valuetype="Lookup" value="SharedList">">
+										<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+										Article
+									</a>
+								</li>
+								<li>
+									<a href="<#ACTION action="10" form="2" value="ISLRFBookChapter">&SharedListID=<#SHAREDLIST field="ListID">">
+										<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>
+										Chapter
+									</a>
+								</li>
+								<li>
+									<a href="<#ACTION action="10" form="2" value="ISLRFBook">&SharedListID=<#SHAREDLIST field="ListID">">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 24 24"><defs><path id="a" d="M0 0h24v24H0V0z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><path clip-path="url(#b)" d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg>
+										Book
+									</a>
+								</li>
+								<li>
+									<a href="<#ACTION action="10" form="2" value="ISLRFInstructorUpload">&SharedListID=<#SHAREDLIST field="ListID">">
+										<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+										File Upload
+									</a>
+								</li>
+								<li>
+									<a href="<#ACTION action="10" form="24" valuetype="Lookup" value="SharedList">">
+										<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M14 17H4v2h10v-2zm6-8H4v2h16V9zM4 15h16v-2H4v2zM4 5v2h16V5H4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+										Free Text
+									</a>
+								</li>
+								<li>
+									<a href="<#ACTION action="10" form="2" value="ISLRFAudio">&SharedListID=<#SHAREDLIST field="ListID">">
+										<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 5h-3v5.5c0 1.38-1.12 2.5-2.5 2.5S10 13.88 10 12.5s1.12-2.5 2.5-2.5c.57 0 1.08.19 1.5.51V5h4v2zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6z"/></svg>
+										Audio
+									</a>
+								</li>
+								<li>
+									<a href="<#ACTION action="10" form="2" value="ISLRFVideo">&SharedListID=<#SHAREDLIST field="ListID">">
+										<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+										Video
+									</a>
+								</li>
+							</ul>
+							<div aria-hidden="true" style="clear:both;"></div>
+						</nav>
 	
 					<br/><div style="clear: both;">
 	
