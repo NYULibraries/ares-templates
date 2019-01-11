@@ -12,7 +12,7 @@
 			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="CreateSharedListItem" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateSharedListItem" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11"/>        
 						<input type="hidden" name="Type" value="16"/>	
 						<input type="hidden" name="ItemType" value="SER"/>						
@@ -23,35 +23,34 @@
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
 						
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h1 tabindex="0">Shared List Reserve Item: Book Chapter</h1>
-							<legend class="offscreen">Shared List Reserve Item: Book Chapter</legend>
+						<fieldset aria-describedby="shared_list_reserve_item_book_chapter_heading">
+							<h1 tabindex="0" id="shared_list_reserve_item_book_chapter_heading">Shared List Reserve Item: Book Chapter</h1>
 							<span class="status-line" tabindex="0"><#STATUS></span>
 							<h2 tabindex="0">Item Information</h2>
 	
 							<label for="Title"><#ERROR name="ERRORTitle">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORTitle">">Title</span><br/>
 									<span class="note">Please do not abbreviate unless your citation is abbreviated</span>
 								</strong>						
-								<input id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
+								<input aria-required="true" required="true" id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
 							</label>
 							
 							<label for="ArticleTitle"><#ERROR name="ERRORArticleTitle">
 								<strong>
-									<span class="req">*</span><span class="<#VALIDATION name="ERRORArticleTitle">">Chapter Title</span>
+									<span aria-hidden="true" class="req">*</span><span class="<#VALIDATION name="ERRORArticleTitle">">Chapter Title</span>
 								</strong>
-								<input id="ArticleTitle" name="ArticleTitle" type="text" size="40" class="f-name" value="<#PARAM name="ArticleTitle">"><br />
+								<input aria-required="true" required="true" id="ArticleTitle" name="ArticleTitle" type="text" size="40" class="f-name" value="<#PARAM name="ArticleTitle">"><br />
 							</label>
 	
 							<label for="Author"><#ERROR name="ERRORAuthor">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORAuthor">">Author</span><br/>
 									<span class="note">(Last Name, First Name)</span>
 								</strong>
-								<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author">"><br />
+								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author">"><br />
 							</label>
 	
 							<label for="Volume"><#ERROR name="ERRORVolume">
@@ -91,10 +90,10 @@
 					
 							<label for="Pages"><#ERROR name="ERRORPages">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORPages">">Inclusive Pages</span>
 								</strong>
-								<input id="Pages" name="Pages" type="text" size="40" class="f-name" value="<#PARAM name="Pages">"><br />
+								<input aria-required="true" required="true" id="Pages" name="Pages" type="text" size="40" class="f-name" value="<#PARAM name="Pages">"><br />
 							</label>
 	
 							<label for="ISXN"><#ERROR name="ERRORISXN">
@@ -118,25 +117,24 @@
 								<input id="CitedIn" name="CitedIn" type="text" size="40" class="f-name" value="<#PARAM name="CitedIn">"><br />
 							</label>
 							
-							<label for="SupplyMethod"><#ERROR name="ERRORSupplyMethod">
-								<strong>
+							<label><#ERROR name="ERRORSupplyMethod">
+								<strong id="supply_method_label">
 									<span class="<#VALIDATION name="ERRORSupplyMethod">" tabindex="0">How will this item be supplied?</span>
 								</strong>
-								<fieldset>
-									<legend class="offscreen">Supply method</legend>
-									<label for="WillDeliver">
-										<input id="WillDeliver" type="radio" checked="checked" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="HardCopy"> name="SupplyMethod" value="HardCopy" class="f-radio" />
-										The item will be a hard copy</label>
+								<fieldset aria-labelledby="supply_method_label">
+									<input aria-labelledby="supply_method_deliver_label" id="WillDeliver" type="radio" checked="checked" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="HardCopy"> name="SupplyMethod" value="HardCopy" class="f-radio" />
+									<span id="supply_method_deliver_label">The item will be a hard copy</span>
+									<br />
+							
+									<input aria-labelledby="supply_method_file_label" id="File" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="File"> name="SupplyMethod" value="File" class="f-radio" />
+									<span id="supply_method_file_label">I will upload a file</span>
+									<br />
 								
-									<label for="File">
-										<input id="File" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="File"> name="SupplyMethod" value="File" class="f-radio" />
-										I will upload a file</label>
-									
-									<label for="WebLink">
-										<input id="WebLink" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WebLink"> name="SupplyMethod" value="WebLink" class="f-radio" />
-										The item should link to a website
-									</label>
+									<input aria-labelledby="supply_method_link_label" id="WebLink" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WebLink"> name="SupplyMethod" value="WebLink" class="f-radio" />
+									<span id="supply_method_link_label">The item should link to a website</span>
+									<br />
 								</fieldset>
+								<div style="clear:both;" aria-hidden="true"></div>
 							</label>
 							
 							<label for="URL"><#ERROR name="ERRORURL">
