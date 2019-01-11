@@ -12,7 +12,7 @@
 			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="CreateSharedListItem" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateSharedListItem" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11"/>
 						<input type="hidden" name="Type" value="35"/>
 						<input type="hidden" name="ItemType" value="MON"/>
@@ -22,9 +22,9 @@
 						<input type="hidden" name="SupplyMethod" value="HardCopy"/>
 	
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h1 tabindex="0">Edit Shared List Item: Book</h1>
-							<legend class="offscreen">Edit Shared List Item: Book</legend>
+						<fieldset aria-labelledby="edit_shared_list_item_book_heading">
+							<h1 tabindex="0" id="edit_shared_list_item_book_heading">Edit Shared List Item: Book</h1>
+
 							<span class="status-line" tabindex="0"><#STATUS></span>
 							<p><#INCLUDE filename="include_sharedlistitemviewdelete.html"></p>
 	
@@ -34,19 +34,19 @@
 							
 							<label for="Title"> <#ERROR Name="ERRORTitle">
 								<strong>
-									<span class="req">*</span><span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
+									<span aria-hidden="true" class="req">*</span><span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
 									<span class="note">Please do not abbreviate unless your citation is abbreviated</span>
 								</strong>
-								<input name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />
+								<input aria-required="true" required="true" name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />
 							</label>
 	
 							<label for="Author"><#ERROR Name="ERRORAuthor">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORAuthor">">Author/Editors</span><br/>
 									<span class="note">(Last Name, First Name)</span>
 								</strong>
-								<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
+								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
 							</label>
 	
 							<label for="Publisher"><#ERROR Name="ERRORPublisher">
