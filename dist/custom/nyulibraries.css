@@ -79,6 +79,7 @@ nav.reserve_actions ul li {
     text-align: center;
     max-width: 10%;
     margin: 0 2rem 0 0;
+    height: 70px;
 }
 nav.reserve_actions h1#reserve_actions_menu {
     margin-bottom: 1em;
