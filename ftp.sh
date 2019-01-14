@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Usage: ./upload.sh myUser 'myPa55w0rd!' '*.html'
+
 USERNAME=$1
 PASSWORD=$2
 PATTERN=$3
