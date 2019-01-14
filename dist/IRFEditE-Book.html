@@ -36,29 +36,29 @@
 							
 							<label for="Title"><#ERROR Name="ERRORTitle">                		
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
-									<span class="note">Please do not abbreviate unless your citation is abbreviated</span>
+									<span class="note" aria-hidden="true" id="title_note">Please do not abbreviate unless your citation is abbreviated</span>
 								</strong>
-								<input name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />
+								<input aria-describedby="title_note" aria-required="true" required="true" name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />
 							</label>
 							
 							<label for="Author"><#ERROR Name="ERRORAuthor">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORAuthor">">Author/Editors</span><br/>
 									<span class="note">(Last Name, First Name)</span>
 								</strong>
-								<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
+								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
 							</label>
 							
 							<label for="Publisher"><#ERROR Name="ERRORPublisher">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORPublisher">">Publisher</span><br />
-									<span class="note">If unknown, use N/A</span>
+									<span class="note" aria-hidden="true" id="publisher_note">If unknown, use N/A</span>
 								</strong>
-								<input id="Publisher" name="Publisher" type="text" size="40" class="f-name" value="<#PARAM Name="publisher"/>"><br />
+								<input aria-describedby="publisher_note" aria-required="true" required="true" id="Publisher" name="Publisher" type="text" size="40" class="f-name" value="<#PARAM Name="publisher"/>"><br />
 							</label>
 							
 							<label for="PubPlace"><#ERROR Name="ERRORPubPlace"> 
@@ -70,29 +70,29 @@
 						
 							<label for="PubDate"><#ERROR Name="ERRORPubDate">					          		
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORPubDate">">Date of Publication</span><br />
-									<span class="note">If unknown, use N/A</span>
+									<span class="note" aria-hidden="true" id="date_of_publication_note">If unknown, use N/A</span>
 								</strong>
-								<input id="PubDate" name="PubDate" type="text" size="40" class="f-name" value="<#PARAM Name="pubdate"/>"><br />
+								<input aria-describedby="date_of_publication_note" aria-required="true" required="true" id="PubDate" name="PubDate" type="text" size="40" class="f-name" value="<#PARAM Name="pubdate"/>"><br />
 							</label>
 						
 							<label for="Edition"><#ERROR Name="ERROREdition">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERROREdition">">Edition</span><br />
-									<span class="note">If unknown, use N/A</span>
+									<span class="note" aria-hidden="true" id="edition_note">If unknown, use N/A</span>
 								</strong>
-								<input id="Edition" name="Edition" type="text" size="40" class="f-name" value="<#PARAM Name="edition"/>"><br />
+								<input aria-describedby="edition_note" aria-required="true" required="true" id="Edition" name="Edition" type="text" size="40" class="f-name" value="<#PARAM Name="edition"/>"><br />
 							</label>
 	
 							<label for="ISXN"><#ERROR name="ERRORISXN">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORISXN">">ISBN</span><br />
-									<span class="note">If unknown, use N/A</span>
+									<span class="note" aria-hidden="true" id="isbn_note">If unknown, use N/A</span>
 								</strong>
-								<input id="ISXN" name="ISXN" type="text" size="40" class="f-name" value="<#PARAM name="ISXN">"><br />
+								<input aria-describedby="isbn_note" aria-required="true" required="true" id="ISXN" name="ISXN" type="text" size="40" class="f-name" value="<#PARAM name="ISXN">"><br />
 							</label>
 							
 							<label for="CallNumber"><#ERROR Name="ERRORCallNumber">					                		
@@ -123,25 +123,26 @@
 							<label for="ItemTags"><#ERROR name="ItemTags">
 								<strong>
 									<span class="<#VALIDATION name="ItemTags">">Tags</span><br />
-									<br/><span class="note">Comma separated list of tags to be assigned to this Item</span>
+									<br/><span class="note" aria-hidden="true" id="tags_note">Comma separated list of tags to be assigned to this Item</span>
 								</strong>
 								<textarea id="ItemTags" name="ItemTags" rows="4"><#ITEM field="Tags" TagType="Instructor"/></textarea><br />
 							</label>
 	
-							<label for="SupplyMethod"><#ERROR name="ERRORSupplyMethod">
+							<label><#ERROR name="ERRORSupplyMethod">
 								<strong>
 									<span class="<#VALIDATION name="ERRORSupplyMethod">" tabindex="0">How will this item be supplied?</span>
 								</strong>
 								<fieldset>
-									<legend class="offscreen">Supply Method</legend>
-									<label for="StaffSearch">
-									<input id="StaffSearch" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="StaffSearch"> name="SupplyMethod" value="StaffSearch" class="f-radio" />
-									Please have library staff provide the material</label>
+									<legend class="offscreen">How will this item be supplied?</legend>
+									<input aria-labelledby="supply_method_staff_label" id="StaffSearch" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="StaffSearch"> name="SupplyMethod" value="StaffSearch" class="f-radio" />
+									<span id="supply_method_staff_label">Please have library staff provide the material</span>
+									<br />
 	
-									<label for="WebLink">
-									<input id="WebLink" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WebLink"> name="SupplyMethod" value="WebLink" class="f-radio" />
-									The item should link to a website</label>
+									<input aria-labelledby="supply_method_link_label" id="WebLink" type="radio" <#PARAM Name="SELECTED" Identifier="SupplyMethod" Value="WebLink"> name="SupplyMethod" value="WebLink" class="f-radio" />
+									<span id="supply_method_link_label">The item should link to a website</span>
+									<br />
 								</fieldset>
+								<div aria-hidden="true" style="clear:both;"></div>
 							</label>
 	
 							<label for="URL"><#ERROR name="ERRORURL">
@@ -156,9 +157,9 @@
 							<label for="CitedIn"><#ERROR name="ERRORCitedIn">		
 								<strong>
 									<span class="<#VALIDATION name="ERRORCitedIn">">Where did you find this item cited?</span>
-									<br /><span class="note">Examples are Dissertation Abstracts, Dialog (specify which database), or a specific journal or book.</span>
+									<br /><span class="note" aria-hidden="true" id="citedin_note">Examples are Dissertation Abstracts, Dialog (specify which database), or a specific journal or book.</span>
 								</strong>
-								<input id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM name="CitedIn"/>"/><br />
+								<input aria-describedat="citedin_note" id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM name="CitedIn"/>"/><br />
 							</label>
 						
 							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="Yes" calendarText="<img src='images/cal.gif' alt='Open Calendar'/>"/>
