@@ -23,7 +23,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 			<main tabindex="-1">
 				<a href="<#ACTION action="10" form="66" value="CourseID" valuetype="Lookup">">Back to <#COURSE field="CourseNumber"/> Messageboard</a>				
 				<h1>Message Board for <#COURSE field="CourseNumber"/></h1>
-				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
+				<span class="error_status" tabindex="0"><#STATUS></span>
 				<a href="<#ACTION action="10" form="67" value="CourseID" valuetype="lookup"/>">New Topic</a> <span aria-hidden="true">|</span> <a href="<#ACTION action="10" form="68" value="ThreadID" valuetype="lookup"/>">Post Reply</a>
 				<span style="padding-top: 5px"><#TABLE class="student-table-nohover" name="MessageBoardThread" headerText="Message Board" 	NoDataAction="ShowNothing"></span>
 			</main>
