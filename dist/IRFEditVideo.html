@@ -14,7 +14,7 @@
 			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="CreateItem" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateItem" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11"/>
 						<input type="hidden" name="CourseID" value="<#COURSE field="CourseID"/>"/>				
 						<input type="hidden" name="ItemID" value="<#ITEM field="ItemID"/>">
