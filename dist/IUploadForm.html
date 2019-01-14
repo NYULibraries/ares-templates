@@ -20,7 +20,8 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<div id="content">
 			<main tabindex="-1">
 				<h1 class="offscreen">Upload Form</h1>
-				<span class="error_status" tabindex="0"><#STATUS></span>
+				<span class="error_status" tabindex="0" aria-describedby="error_status_description"><#STATUS></span>
+							<span id="error_status_description">Error status</span>
 	
 				<div class="instructor">
 				<div class="header">Reserve Item</div>

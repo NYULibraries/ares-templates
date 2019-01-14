@@ -23,15 +23,16 @@
 						<input type="hidden" name="ItemID" value="<#ITEM field="ItemID"/>">
 						
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h1 tabindex="0">Edit Reserve Item: E-Book</h1>
-							<legend class="offscreen">Edit Reserve Item: E-Book</legend>
-							<span class="error_status" tabindex="0"><#STATUS></span>				
+						<fieldset aria-labelledby="edit_reserve_item_ebook_heading">
+							<h1 tabindex="0" id="edit_reserve_item_ebook_heading">Edit Reserve Item: E-Book</h1>
+							<span class="error_status" tabindex="0" aria-describedby="error_status_description"><#STATUS></span>
+							<span id="error_status_description">Error status</span>
+
 							<p tabindex="0">This item is currently at a status of: <span class="success"><#ITEM field="CurrentStatus"></span></p>
 							<p><#INCLUDE filename="include_viewdelete.html"></p>
 							<h2 tabindex="0">Item Information</h2>
 							
-							<h1><b><font color="red">DO NOT USE THIS FORM FOR SHANGHAI CAMPUS RESERVES. USE THE BOOK FORM INSTEAD.</font></b></h1><br />
+							<h3 class="alert" tabindex="0">DO NOT USE THIS FORM FOR SHANGHAI CAMPUS RESERVES. USE THE BOOK FORM INSTEAD.</h3>
 							
 							<label for="Title"><#ERROR Name="ERRORTitle">                		
 								<strong>
