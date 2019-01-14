@@ -117,10 +117,12 @@
 							</label>
 							
 							<label><#ERROR name="ERRORSupplyMethod">
-								<strong id="supply_method_label">
+								<strong>
 									<span class="<#VALIDATION name="ERRORSupplyMethod">" tabindex="0">How will this item be supplied?</span>
 								</strong>
-								<fieldset aria-labelledby="supply_method_label" class="fields">							
+								<fieldset class="fields">
+									<legend class="offscreen">How will this item be supplied?</legend>
+							
 									<input aria-labelledby="supply_method_none_label" id="None" type="radio" checked="checked" name="SupplyMethod" value="None" class="f-radio" />
 									<span id="supply_method_none_label">I do not want to change the actual reserve content</span>
 									<br />
