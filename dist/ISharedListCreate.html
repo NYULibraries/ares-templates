@@ -14,15 +14,15 @@
 			<#INCLUDE filename="include_menu.html">	
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="CreateSharedList" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateSharedList" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11">
 						<input type="hidden" name="Type" value="15">							
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
 						
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h1 tabindex="0">Create a Shared List</h1>
-							<legend class="offscreen">Create a Shared List</legend>
+						<fieldset aria-labelledby="create_shared_list_heading">
+							<h1 tabindex="0" id="create_shared_list_heading">Create a Shared List</h1>
+
 							<span class="status-line" tabindex="0"><#STATUS></span>
 							<h2 tabindex="0">Shared List Information</h2>
 	
@@ -30,10 +30,10 @@
 	
 							<label for="SharedListName"><#ERROR name="ERRORSharedListName">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORSharedListName">">Shared List Name</span>
 								</strong>
-								<input id="SharedListName" name="SharedListName" type="text" size="40" class="f-name" value="<#PARAM name="SharedListName">"><br />
+								<input aria-required="true" required="true" id="SharedListName" name="SharedListName" type="text" size="40" class="f-name" value="<#PARAM name="SharedListName">"><br />
 							</label>
 							
 							<input class="f-submit" type="submit" name="SubmitButton" value="Create List" />

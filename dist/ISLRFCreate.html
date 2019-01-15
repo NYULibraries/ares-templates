@@ -26,8 +26,8 @@
 			<#INCLUDE filename="include_instructorsharedlistmenu.html" restriction="Usertype:SharedListInstructor">
 			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
 			<div id="content">
-				<main tabindex="-1"
-					<form action="ares.dll" method="post" name="CreateSharedListItem" id="CreateSharedListItem" class="f-wrap-request">
+				<main tabindex="-1">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateSharedListItem" id="CreateSharedListItem" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11">
 						<input type="hidden" name="SharedListID" value="<#SHAREDLIST field="ListID"/>"/>
 						<input type="hidden" name="Type" value="16">		
@@ -37,25 +37,25 @@
 						<input type="hidden" name="SupplyMethod" value="Create" />
 	
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h1 tabindex="0">Shared List Reserve Item: Free Text</h1>
-							<legend class="offscreen">Shared List Reserve Item: Free Text</legend>
+						<fieldset aria-labelledby="shared_list_reserve_item_free_text_heading">
+							<h1 tabindex="0" id="shared_list_reserve_item_free_text_heading">Shared List Reserve Item: Free Text</h1>
+
 							<span class="status-line" tabindex="0"><#STATUS></span>
 							<h2 tabindex="0">Item Information</h2>
 						
 							<label for="Title"><#ERROR name="ERRORTitle">
 								<strong>
-									<span class="req">*</span><span class="<#VALIDATION name="ERRORTitle">">Title</span>
+									<span aria-hidden="true" class="req">*</span><span class="<#VALIDATION name="ERRORTitle">">Title</span>
 								</strong>
-								<input id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
+								<input aria-required="true" required="true" id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
 							</label>
 	
 							<label for="Author"><#ERROR name="ERRORAuthor">
 								<strong>
-									<span class="req">*</span><span class="<#VALIDATION name="ERRORAuthor">">Author</span><br/>
+									<span aria-hidden="true" class="req">*</span><span class="<#VALIDATION name="ERRORAuthor">">Author</span><br/>
 									<span class="note">(Last Name, First Name)</span>
 								</strong>
-								<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author">" onKeyDown="focusIframeOnTab(this,'ItemText___Frame', event);if(!document.all) return false;"><br />
+								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author">" onKeyDown="focusIframeOnTab(this,'ItemText___Frame', event);if(!document.all) return false;"><br />
 							</label>
 	
 							<label for="ItemText"><#ERROR name="ERRORItemContent">
@@ -63,6 +63,7 @@
 									<span class="<#VALIDATION name="ItemText">" tabindex="0">Item Text</span><br />
 									<span class="note" tabindex="0">Create the item's content in the free text area below.</span>
 								</strong>
+								<div style="clear:both;" aria-hidden="true"></div>
 							</label>
 							
 							<label>
