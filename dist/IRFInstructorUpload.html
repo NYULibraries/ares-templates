@@ -12,7 +12,7 @@
 			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="createitem" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="createitem" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11"/>        
 						<input type="hidden" name="Type" value="10"/>	
 						<input type="hidden" name="ItemType" value="MON"/>						
@@ -23,30 +23,29 @@
 						<input type="hidden" name="SupplyMethod" value="File"/>
 						
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h1 tabindex="0">Reserve Item: File Upload</h1>
-							<legend class="offscreen">Reserve Item: File Upload</legend>
+						<fieldset aria-labelledby="reserve_item_file_upload_heading">
+							<h1 tabindex="0" id="reserve_item_file_upload_heading">Reserve Item: File Upload</h1>
 							<span class="error_status" tabindex="0" aria-describedby="error_status_description"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
 							<h2 tabindex="0">Item Information</h2>
 							
 							<label for="Title"><#ERROR Name="ERRORTitle">	                		
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
-									<span class="note">Please do not abbreviate unless your citation is abbreviated</span>
+									<span class="note" aria-hidden="true" id="title_note">Please do not abbreviate unless your citation is abbreviated</span>
 								</strong>
-								<input id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
+								<input aria-describedby="title_note" aria-required="true" required="true" id="Title" name="Title" type="text" size="40" class="f-name" value="<#PARAM name="Title">"><br />
 							</label>
 	
 	
 							<label for="Author"><#ERROR Name="ERRORAuthor">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORAuthor">">Author/Editors</span><br/>
 									<span class="note">(Last Name, First Name)</span>
 								</strong>
-								<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
+								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
 							</label>
 							
 							<br>
@@ -54,18 +53,18 @@
 							<label for="Notes"><#ERROR name="ERRORNotes">
 								<strong>
 									<span class="<#VALIDATION name="ERRORNotes">">Notes</span><br />
-									<span class="note">Put any information here that may help us find the item, as well as any other pertinent information.</span>
+									<span class="note" aria-hidden="true" id="notes_note">Put any information here that may help us find the item, as well as any other pertinent information.</span>
 								</strong>
-								<textarea id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea>
+								<textarea aria-describedby="notes_note" id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea>
 								<br /><br />
 							</label>
 	
 							<label for="ItemTags"><#ERROR name="ItemTags">
 								<strong>
 									<span class="<#VALIDATION name="ItemTags">">Tags</span><br />
-									<br/><span class="note">Comma separated list of tags to be assigned to this Item</span>
+									<br/><span class="note" aria-hidden="true" id="tags_note">Comma separated list of tags to be assigned to this Item</span>
 								</strong>
-								<textarea id="ItemTags" name="ItemTags" rows="4"><#PARAM name="ItemTags"/></textarea><br />
+								<textarea aria-describedby="tags_note" id="ItemTags" name="ItemTags" rows="4"><#PARAM name="ItemTags"/></textarea><br />
 							</label>
 	
 							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="Yes" calendarText="<img src='images/cal.gif' alt='Open Calendar'/>"/>

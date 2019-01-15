@@ -12,7 +12,7 @@
 			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="CreateSharedListItem" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateSharedListItem" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11"/>
 						<input type="hidden" name="Type" value="16"/>
 						<input type="hidden" name="CopyrightRequired" value="No" />
@@ -23,26 +23,26 @@
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
 	
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-						<fieldset>
-							<h1 tabindex="0">Shared List Item: Book</h1>
-							<legend class="offscreen">Shared List Item: Book</legend>
+						<fieldset aria-labelledby="shared_list_item_book_heading">
+							<h1 tabindex="0" id="shared_list_item_book_heading">Shared List Item: Book</h1>
+
 							<span class="status-line" tabindex="0"><#STATUS></span>
 	
 							<label for="Author"><#ERROR Name="ERRORAuthor">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORAuthor">">Author/Editors</span>
 								</strong>
-								<input id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
+								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
 							</label>
 	
 							<label for="Title"><#ERROR Name="ERRORTitle">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORTitle>">Title</span><br />
-									<span class="note">Please do not abbreviate unless your citation is abbreviated</span>
+									<span class="note" aria-hidden="true" id="title_note">Please do not abbreviate unless your citation is abbreviated</span>
 								</strong>
-	                            <input name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />							
+	                            <input aria-describedby="title_note" aria-required="true" required="true" name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />							
 							</label>
 	
 							<label for="Publisher"><#ERROR Name="ERRORPublisher">
@@ -76,9 +76,9 @@
 							<label for="ISXN"><#ERROR Name="ERRORISXN">
 								<strong>
 									<span class="<#VALIDATION name="ERRORISXN">">ISBN (International Standard Book Number)</span><br />
-									<span class="note">If given will speed request processing</span>
+									<span class="note" aria-hidden="true" id="isbn_note">If given will speed request processing</span>
 								</strong>
-								<input id="ISXN" name="ISXN" type="text" size="20" class="f-name" value="<#PARAM name="ISXN"/>"><br />
+								<input aria-describedby="isbn_note" id="ISXN" name="ISXN" type="text" size="20" class="f-name" value="<#PARAM name="ISXN"/>"><br />
 							</label>
 	
 							<label for="CallNumber"><#ERROR name="ERRORCallNumber">
@@ -98,9 +98,9 @@
 							<label for="CitedIn"><#ERROR name="ERRORCitedIn">
 								<strong>
 									<span class="<#VALIDATION name="ERRORESPNumber">">Where did you find this item cited?</span><br />
-									<span class="note">Examples are Dissertation Abstracts, Dialog (specify which database), or a specific journal or book.</span>
+									<span class="note" aria-hidden="true" id="citedin_note">Examples are Dissertation Abstracts, Dialog (specify which database), or a specific journal or book.</span>
 								</strong>
-								<input id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM Name="citedin"/>"/><br />
+								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM Name="citedin"/>"/><br />
 							</label>
 	
 	                        <#TABLE class="instructor-table filterTable" name="SharedListItemRestrictions" headerText="Shared List Restrictions" />						
