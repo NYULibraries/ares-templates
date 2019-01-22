@@ -14,13 +14,15 @@
 			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
 			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
 			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
-			<div id="content" role="main" tabindex="-1">
-				<h1>Course Enrolled Students</h1>
-				<div class="instructor">	
-					<#INCLUDE filename="include_defaultcourseinfo.html">
-				</div>
-				
-				<#TABLE Id="StudentList" Name="StudentList" headerText="Students" class="instructor-table-nohover" NoDataMessage="You currently have no students enrolled." NoDataAction="ShowMessage" allowsort="true">
+			<div id="content">
+				<main tabindex="-1">
+					<h1>Course Enrolled Students</h1>
+					<div class="instructor">	
+						<#INCLUDE filename="include_defaultcourseinfo.html">
+					</div>
+					
+					<#TABLE Id="StudentList" Name="StudentList" headerText="Students" class="instructor-table-nohover" NoDataMessage="You currently have no students enrolled." NoDataAction="ShowMessage" allowsort="true">
+				</main>
 
 				<div id="footer" role="contentinfo">
 					<p><#COPYRIGHT></p>
