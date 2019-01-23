@@ -16,33 +16,34 @@
 		    <#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
 		    <#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
             <div id="content"> 
-			<main tabindex="-1">
-                <h1 class="offscreen">Course <#COURSE field="CourseNumber"/></h1>
-                		    <span class="error_status"><#STATUS/></span>
-                                <div class="instructor">
-                			    <#INCLUDE filename="include_defaultcourseinfo.html"/>
-                			    <div class="row"><p class="note">Email subscriptions allow you to receive an email notification when a new item becomes available in this course.<br/>
-                				    <#SUBSCRIBE notSubscribedText="You are currently <span class='error'>not</span> subscribed. " subscribedText="You are currently subscribed. " subscribeLink="Subscribe Now" unsubscribeLink="Please remove my subscription"/>
-                			    </p></div>				
-                                </div>
-                
-                                <h2>Filter by item tag:</h2>
-                	            <#TAGCLOUD TagType="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" /><br/><br/>
-                                <div style="float: right">
-                                    <select id="SortCourseItems" name="SortCourseItems" aria-label="Choose field to order by. Selecting a value will reload the page and sort the course items by that field." onblur="ResortItems('<#PARAM name="SessionID">', '<#PARAM name="Value">', this[selectedIndex].value);"/>
-                                        <option value="" selected="selected" disabled="disabled">Sort By</option>
-                                        <option value="SortOrder,Title,ArticleTitle">Default</option>
-                                        <option value="Title,ArticleTitle">Title</option>
-                                        <option value="Author">Author</option>
-                                        <option value="InactiveDate">Available Until</option>
-                                    </select>                    
-                                    <input type="button" onClick="SaveSortOrder('ItemTable', 'ID', '<#ACTION action="70" type="786">')" value="Save Order" class="f-submit"/>
-                                    <button id="ShowBatchInterface" class="EnableBatchEditing f-submit" data-batchTable="ItemTable" data-batchMenu="batchMenu" data-enabletext="Enable Batch Tag Editing" data-disabletext="Disable Batch Tag Editing">Enable Batch Tag Editing</button>
-                                </div>
-                                <#INCLUDE filename="include_instructorBatchMenu.html">                 
-                                <#TABLE class="instructor-table filterTable" name="Item" id="ItemTable" type="CourseItems" headerText="Reserve Items" LinkType="ItemInfo" LinkColumn="BothTitlesIcon" column="ItemID:ID" column="BothTitlesIcon:Title" column="Author:Author" column="inactiveDate:Inactive" column="CurrentStatus:Status" column="Tags:Tags" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course." allowsort="true">
-            </main>
+                <main tabindex="-1">
+                    <h1 class="offscreen">Course <#COURSE field="CourseNumber"/></h1>
+                    <span class="error_status"><#STATUS/></span>
+                    <div class="instructor">
+                        <#INCLUDE filename="include_defaultcourseinfo.html"/>
+                        <div class="row"><p class="note">Email subscriptions allow you to receive an email notification when a new item becomes available in this course.<br/>
+                            <#SUBSCRIBE notSubscribedText="You are currently <span class='error'>not</span> subscribed. " subscribedText="You are currently subscribed. " subscribeLink="Subscribe Now" unsubscribeLink="Please remove my subscription"/>
+                        </p></div>				
+                    </div>
 
+                    <h4>Filter by item tag:</h4>
+                    <#TAGCLOUD TagType="Course" MaxFontSizes="5" IncludeTagCount="Yes" TagFence="No" /><br/><br/>
+                    <div style="float: right">
+                        <select id="SortCourseItems" name="SortCourseItems" aria-label="Choose field to order by. Selecting a value will reload the page and sort the course items by that field." onblur="ResortItems('<#PARAM name="SessionID">', '<#PARAM name="Value">', this[selectedIndex].value);"/>
+                            <option value="" selected="selected" disabled="disabled">Sort By</option>
+                            <option value="SortOrder,Title,ArticleTitle">Default</option>
+                            <option value="Title,ArticleTitle">Title</option>
+                            <option value="Author">Author</option>
+                            <option value="InactiveDate">Available Until</option>
+                        </select>                    
+                        <input type="button" onClick="SaveSortOrder('ItemTable', 'ID', '<#ACTION action="70" type="786">')" value="Save Order" class="f-submit"/>
+                        <button id="ShowBatchInterface" class="EnableBatchEditing f-submit" data-batchTable="ItemTable" data-batchMenu="batchMenu" data-enabletext="Enable Batch Tag Editing" data-disabletext="Disable Batch Tag Editing">Enable Batch Tag Editing</button>
+                    </div>
+                    <#INCLUDE filename="include_instructorBatchMenu.html">                 
+                    <#TABLE class="instructor-table filterTable" name="Item" id="ItemTable" type="CourseItems" headerText="Reserve Items" LinkType="ItemInfo" LinkColumn="BothTitlesIcon" column="ItemID:ID" column="BothTitlesIcon:Title" column="Author:Author" column="inactiveDate:Inactive" column="CurrentStatus:Status" column="Tags:Tags" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course." allowsort="true">
+
+                   
+                </main> 
                 <div id="footer" role="contentinfo">
                     <p><#COPYRIGHT></p>
                     <#INCLUDE filename="include_footer.html"> 
