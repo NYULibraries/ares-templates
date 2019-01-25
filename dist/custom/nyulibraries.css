@@ -160,11 +160,10 @@ h3.alert {
 	text-align: left;
 	letter-spacing: 0 !important;
 	font-weight: bold;
-    width: inherit !important;
+    width: 99% !important;
 }
 .top_banner_alert {
     background-color: #F89763;
-    color: #333;
 }
 .top_banner_alert > div {
     padding: 1em;
@@ -174,6 +173,7 @@ h3.alert {
     padding: 1em;
 }
 .orange_alert, .orange_alert a {
+    color:#333333 !important;
     font-weight: bold;
     font-size: 18px;
     font-family: verdana, arial, geneva, sans-serif;
