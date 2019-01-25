@@ -125,7 +125,7 @@
 							<div>
 								<a href="#" aria-label="Uncheck all of the rows in the table below." onclick="ToggleCheckboxes(false, 'CloneItems'); return false;">Uncheck All</a> <span aria-hidden="true">|</span> <a href="#" aria-label="Check all of the rows in the table below." onclick="ToggleCheckboxes(true, 'CloneItems'); return false;">Check All</a><span class="<#CONDITIONAL test='CourseHasSharedList' false='hidden'>"> <span aria-hidden="true">|</span> <a href="#" aria-label="Uncheck all of the rows in the table below that were created from a shared list item." onclick="ToggleCheckboxes(false, 'CloneItems', 'sharedlistitem'); return false;">Uncheck All Created From Shared List</a></span><br/>
 							</div>
-							<#TABLE id="CloneItems" class="instructor-table-nohover" name="CloneItems" headerText="Reserve Materials to Clone" IncludeSharedListRelationship="Conditionally" IncludeJavascriptCalendar="Yes"  calendarText="<img src='images/cal.gif' alt='Open Calendar'/>"/>
+							<#TABLE id="CloneItems" class="instructor-table-nohover" name="CloneItems" headerText="Reserve Materials to Clone" IncludeSharedListRelationship="Conditionally" IncludeJavascriptCalendar="No"  calendarText=""/>
 	
 							<div>
 								<a href="#" aria-label="Uncheck all of the rows in the table below." onclick="ToggleCheckboxes(false, 'CloneInstructors'); return false;">Uncheck All</a> <span aria-hidden="true">|</span> <a href="#" aria-label="Check all of the rows in the table below." onclick="ToggleCheckboxes(true, 'CloneInstructors'); return false;">Check All</a><br/>
