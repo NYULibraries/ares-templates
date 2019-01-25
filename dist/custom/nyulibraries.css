@@ -55,6 +55,7 @@ main button, main input[type='reset'], main input[type='submit'], main input[typ
     padding: 8px !important;
     border-radius: 3px !important;
     display: inline-block !important;
+    margin: 10px !important;
 }
 main button:hover, main input[type='reset']:hover, main input[type='submit']:hover, main input[type='button']:hover {
     background: #6c07ae !important;
