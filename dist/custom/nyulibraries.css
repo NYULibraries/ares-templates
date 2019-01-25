@@ -162,3 +162,30 @@ h3.alert {
 	font-weight: bold;
     width: inherit !important;
 }
+.top_banner_alert {
+    background-color: #F89763;
+    color: #333;
+}
+.top_banner_alert > div {
+    padding: 1em;
+    text-align: left;
+}
+.orange_alert {
+    padding: 1em;
+}
+.orange_alert, .orange_alert a {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: verdana, arial, geneva, sans-serif;
+}
+.orange_alert a {
+    text-decoration: underline;
+}
+#search {
+    float: right !important;
+    position: relative !important;
+    top: inherit !important;
+}
+#title-name {
+    display: inline !important;
+}
