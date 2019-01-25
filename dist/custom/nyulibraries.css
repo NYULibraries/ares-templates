@@ -26,6 +26,7 @@ input.f-submit, button.f-submit, #search input.f-submit, table.student-table tfo
 input.f-submit:hover, button.f-submit:hover, #search input.f-submit:hover, table.student-table tfoot input:hover {
     border: none;
     box-shadow: none;
+    font-size: .8rem !important;
 }
 #header input#Keyword {
     border: none;
