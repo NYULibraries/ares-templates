@@ -11,7 +11,7 @@
 		</li>
 		<#INCLUDE filename="include_instructormenu.html" restriction="UserType:Instructor">
 		<#INCLUDE filename="include_studentmenu.html" restriction="UserType:Student">
-		<li class="active"><a href="#">Need help?</a>
+		<li class="active"><span class="nav-section" tabindex="0">Need help?</span>
 			<ul>
 				<li class="first"><a href="https://nyu.qualtrics.com/jfe/form/SV_81GYe1SbEoASbit" target="_blank">Contact staff</a></li>
 			</ul>
@@ -21,7 +21,7 @@
 				<li class="first"><a href="<#ACTION action="20" form="81">">Review User Information</a></li>
 			</ul>
 		</li>
-		<li class="active"><a href="#">Alerts</a>
+		<li class="active"><span class="nav-section" tabindex="0">Alerts</span>
 			<ul>
 				<li class="first"><span id="alertsgroup"><#ALERTS NoDataAction="showMessage" AllowAjax="Yes"></span></li>
 			</ul>
