@@ -7,8 +7,12 @@
 #search #Keyword {
     width: 15em;
 }
-#footer, #footer a {
+#footer a {
     color: black !important;
+    text-decoration: underline;
+}
+#footer a:hover {
+    color: #57068C !important;
 }
 #utility {
     border-right: 2px solid #D3D3D3 !important;
@@ -33,6 +37,9 @@ input.f-submit:hover, button.f-submit:hover, #search input.f-submit:hover, table
     background-color: #22272d;
     color: #fff;
     border-radius: 0 3px 3px 0;
+}
+#header input.f-submit:hover {
+    color: #22272D;
 }
 main button, main input[type='reset'], main input[type='submit'], main input[type='button'] {
     -webkit-appearance: none;
