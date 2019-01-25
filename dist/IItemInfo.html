@@ -21,13 +21,12 @@ var sessionid = '<#PARAM name="SessionID"/>';
 		
 		<div id="content">
 			<main tabindex="-1">
-				<h1 class="offscreen">Item <#ITEM field="ItemID"/></h1>
 				<a href="<#ACTION action="10" form="60" valueType="Lookup" Value="CourseID">">Back to <#COURSE field="Name"></a>
 				<br/>
 	
 	
 				<div class="instructor">
-					<div class="header">Reserve Item</div>
+					<h1 class="header">Reserve Item Details: Item <#ITEM field="ItemID"/></h1>
 					<span style="float: left; margin: 10px 10px 2px 5px; width: 20px; height: 100px"><#ITEM field="Icon"></span>
 					<div class="row"><#INCLUDE filename="include_vieweditdelete.html"></div>						
 					<div class="row"><#ITEM field="CurrentStatus"/> <#ITEM field="ReasonForCancellation" headerText=" : "/></div>

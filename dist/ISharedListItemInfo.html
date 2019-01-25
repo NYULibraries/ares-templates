@@ -15,12 +15,11 @@
 			<#INCLUDE filename="include_fullproxysharedlistmenu.html" restriction="Usertype:SharedListFullProxy">	
 			<div id="content">
 				<main tabindex="-1">
-					<h1 class="offscreen">Shared List Item <#SHAREDLISTITEM field="ListItemID"></h1>
 					<a href="<#ACTION action="10" form="40" valueType="Lookup" Value="ListID">">Back to <#SHAREDLIST field="ListName"></a>
 					<br/>
 	
 					<div class="instructor">
-						<div class="header">Shared List Reserve Item</div>
+						<h1 class="header">Shared List Reserve Item Details: List Item <#SHAREDLISTITEM field="ListItemID"></h1>
 						<span class="item-icon"><#SHAREDLISTITEM field="Icon"></span>
 						<div class="row"><#INCLUDE filename="include_sharedlistitemvieweditdelete.html"></div>						
 						<div class="row"><#SHAREDLISTITEM field="CurrentStatus"/> <#SHAREDLISTITEM field="ReasonForCancellation" headerText=" : "/></div>

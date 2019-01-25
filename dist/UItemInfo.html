@@ -24,11 +24,10 @@ var sessionid = '<#PARAM name="SessionID"/>';
 		
 		<div id="content">
 			<main tabindex="-1">
-				<h1 class="offscreen"><#CUSTOMIZATION name='HotListName'></h1>
 				<a href="<#ACTION action="10" form="60" valueType="Lookup" Value="CourseID">">Back to <#COURSE field="CourseNumber"> - <#COURSE field="Name"></a>
 				<br/>
 				<div class="student" style="width:100%">
-				<div class="header">Reserve Item</div>
+				<h1 class="header">Reserve Item Details: Item <#ITEM field="ItemID"/></h1>
 				<span style="float: left; margin: 10px 10px 0px 2px; width: 20px; height: 100px"><#ITEM Field="Icon"></span>
 				<div class="row"><span style="font-weight: bold"><#ITEM field="Title"/></span></div>
 				<div class="row"><#ITEM field="ArticleTitle"/></div>

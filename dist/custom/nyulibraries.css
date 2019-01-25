@@ -7,11 +7,11 @@
 #search #Keyword {
     width: 15em;
 }
-#footer a {
+main a, #footer a {
     color: black !important;
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
-#footer a:hover {
+main a:hover, #footer a:hover {
     color: #57068C !important;
 }
 #utility {
@@ -152,4 +152,13 @@ h3.alert {
 #error_status_description {
     display: none;
 }
-
+.header {
+    margin-top: 0 !important;
+	color: #fff;
+    background-color: #57068C !important;
+	padding: 5px 5px;
+	text-align: left;
+	letter-spacing: 0 !important;
+	font-weight: bold;
+    width: inherit !important;
+}
