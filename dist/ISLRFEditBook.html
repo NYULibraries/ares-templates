@@ -25,7 +25,7 @@
 						<fieldset aria-labelledby="edit_shared_list_item_book_heading">
 							<h1 tabindex="0" id="edit_shared_list_item_book_heading">Edit Shared List Item: Book</h1>
 
-							<span class="status-line" tabindex="0"><#STATUS></span>
+							<span class="status-line" tabindex="0" aria-live="assertive"><#STATUS></span>
 							<p><#INCLUDE filename="include_sharedlistitemviewdelete.html"></p>
 	
 							<#OPTION name="PickupLocation" isSharedListItem="True" headerText="<label for='Pickup Location'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">

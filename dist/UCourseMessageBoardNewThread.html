@@ -29,7 +29,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 					<h1 tabindex="0"New topic for <#COURSE field="CourseNumber"/></h1>
 	                <fieldset>
 						<legend class="offscreen">New message board thread</legend>
-						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
+						<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0" aria-live="assertive"><#STATUS></span>
 	                	<label for="PostTitle">
 	                		<#ERROR name="ERRORPostTitle">
 	                		<strong><span aria-hidden="true" class="req">*</span>Subject</strong>

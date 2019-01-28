@@ -20,7 +20,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<div id="content">
 			<main tabindex="-1">
 				<h1 class="offscreen">Item <#ITEM field="ItemID"/></h1>
-				<span class="error_status" tabindex="0" aria-describedby="error_status_description"><#STATUS></span>
+				<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
 				<#TABLE name="Course" class="instructor-table filterTable" headerText="Previous Courses" LinkColumn="CourseNumber" Session="Previous" Role="Instructor" column="Semester:Semester" column="CourseNumber:Course" column="CourseCode:Course Code" column="Name:Name" NoDataAction="ShowMessage" NoDataMessage="No courses found." orderby="C.StopDate DESC,C.CourseNumber ASC">		
 			</main>

@@ -37,7 +37,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 				</div>
 	
 				<p>Users in this list will have the ability to administer this course. Add new users by entering their username below.</p>	
-				<span class="error_status" tabindex="0" aria-describedby="error_status_description"><#STATUS></span>
+				<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
 				<p><input aria-label="Course Proxy's Username" name="ProxyUser" type="text"/>&nbsp;<input id="AddProxy" type="submit" name="AddProxyUser" Value="Add Proxy User" class="f-submit"/></p>	
 				<#TABLE Name="Proxy" headerText="Proxy Users" class="instructor-table" DeleteText="Remove"  Type="Course" HideColumnHeaders="True" column="DeleteUsernameFirstnameLastname:Name" NoDataMessage="You currently have no course proxy users assigned." NoDataAction="ShowMessage">

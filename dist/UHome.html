@@ -19,7 +19,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<div id="content">
 			<main tabindex="-1">
 				<h1>Main Menu</h1>
-				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0"><#STATUS></span>
+				<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0" aria-live="assertive"><#STATUS></span>
 				<form data-accessibility="true" name="UserHome" method="post" action="ares.dll">
 				<input type="hidden" name="action" value="20" />
 	 			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>			

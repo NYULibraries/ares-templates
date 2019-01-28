@@ -31,7 +31,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 					<h1 tabindex="0">New topic for <#COURSE field="CourseNumber"/></h1>
 	                <fieldset>
 						<legend class="offscreen">New message board topic</legend>
-						<span class="error_status" tabindex="0" aria-describedby="error_status_description"><#STATUS></span>
+						<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
 	                	<label for="PostTitle">
 	                		<#ERROR name="ERRORPostTitle">

@@ -26,7 +26,7 @@
 						<input type="hidden" name="CourseID" value="<#COURSE field="CourseID"/>"/>				
 						<input type="hidden" name="Form" value="<#PARAM name="Form">"/>
 	
-						<span class="error_status" tabindex="0" aria-describedby="error_status_description"><#STATUS></span>
+						<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
 					
 						<#TABLE Name="AuthorizedUsers" headerText="Authorized Users" class="instructor-table-nohover" NoDataMessage="There are currently no students in this course." NoDataAction="ShowMessage" orderBy="LastName">

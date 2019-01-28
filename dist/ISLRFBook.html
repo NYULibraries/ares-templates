@@ -26,7 +26,7 @@
 						<fieldset aria-labelledby="shared_list_reserve_item_book_heading">
 							<h1 tabindex="0" id="shared_list_reserve_item_book_heading">Shared List Reserve Item: Book</h1>
 
-							<span class="status-line" tabindex="0"><#STATUS></span>
+							<span class="status-line" tabindex="0" aria-live="assertive"><#STATUS></span>
 	
 							<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='Pickup Location'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
 							

@@ -18,7 +18,7 @@ var sessionid = '<#PARAM Name="SessionID">';
 		<div id="content">
 			<main tabindex="-1">
 				<h1 class="offscreen">Shared Lists</h1>
-				<span class="status-line"><#STATUS></span>
+				<span class="status-line" aria-live="assertive"><#STATUS></span>
 				
 				<#TABLE name="SharedList" class="instructor-table filterTable" headerText="Instructor Shared Lists" LinkColumn="ListID" ListType="Instructor" column="ListID:List ID" column="ListName:List Name" column="ListReference:Instructor Name" NoDataAction="ShowMessage" NoDataMessage="No Shared Lists found.">		
 				
