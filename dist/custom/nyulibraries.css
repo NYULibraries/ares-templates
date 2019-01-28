@@ -193,3 +193,7 @@ h3.alert {
 form.f-wrap-request {
     width: 99% !important;
 }
+tbody tr.row-hover, 
+tbody tr:hover {
+    background-color: #F3E8FB !important;
+}
