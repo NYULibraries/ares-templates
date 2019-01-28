@@ -11,26 +11,27 @@
 			<#INCLUDE filename="include_menu.html">
 			<div id="content">
 				<main tabindex="-1">
-					<form action="ares.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
+					<form data-accessibility="true" action="ares.dll" method="post" name="NewAuthRegistration" class="f-wrap-request">
 						<input type="hidden" name="Action" value="11"/>
 						<input type="hidden" name="Form" value="87"/>
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
 						<input type="hidden" name="Username" value="<#PARAM name="Username">">
-						<input type="hidden" name="LibraryID" value="<#PARAM name="Username">">
+						<input type="hidden" name="FirstName" value="<#PARAM name="FirstName">">
+						<input type="hidden" name="LastName" value="<#PARAM name="LastName">">
+						<input type="hidden" name="LibraryID" value="<#PARAM name="LibraryID">">
 						<input type="hidden" name="ExternalUserID" value="<#PARAM name="Username">">
 	
-						<fieldset>
+						<fieldset aria-labelledby="user_information_heading">
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
-							<h1 tabindex="0">User Information</h1>
-							<legend class="offscreen">User Information</legend>
+							<h1 tabindex="0" id="user_information_heading">User Information</h1>
 							<span style="background-color:#E6F4FF ;font-size: 110%" tabindex="0" aria-live="assertive"><#STATUS></span>
 	
 							<label for="Username"><#ERROR Name="ERRORUsername">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORUsername">">Username</span>
 								</strong>
-								<input id="Username" name="Username" type="text" size="40" class="f-name" value="<#PARAM name="Username"/>" disabled="disabled"><br />
+								<input aria-required="true" required="true" id="Username" name="Username" type="text" size="40" class="f-name" value="<#PARAM name="Username"/>" disabled="disabled"><br />
 							</label>
 	
 							<label for="FirstName">                		                		
