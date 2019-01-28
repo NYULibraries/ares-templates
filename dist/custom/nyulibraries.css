@@ -63,7 +63,6 @@ main button:hover, main input[type='reset']:hover, main input[type='submit']:hov
     color: #fff !important;
 }
 *:focus,
-input:focus,
 select:focus,
 button:focus,
 a:focus,
@@ -153,6 +152,12 @@ h3.alert {
     background-color: #E6F4FF;
     font-size: 110%
 }
+.error_status > span[id^='status'] {
+    display: block;
+}
+.error_status .statusNormal {
+    background-color: #E6F4FF;
+}
 #error_status_description {
     display: none;
 }
@@ -199,4 +204,7 @@ form.f-wrap-request {
 tbody tr.row-hover, 
 tbody tr:hover {
     background-color: #F3E8FB !important;
+}
+thead th {
+    font-weight: normal !important;
 }

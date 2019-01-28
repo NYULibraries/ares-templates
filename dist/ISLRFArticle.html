@@ -66,10 +66,10 @@
 	
 							<label for="ArticleTitle"><#ERROR name="ERRORArticleTitle">
 								<strong>
-									<span class="req">*</span>
+									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORArticleTitle">">Article Title</span>
 								</strong>
-								<input id="ArticleTitle" name="ArticleTitle" type="text" size="40" class="f-name" value="<#PARAM name="ArticleTitle">"><br />
+								<input aria-required="true" required="true" id="ArticleTitle" name="ArticleTitle" type="text" size="40" class="f-name" value="<#PARAM name="ArticleTitle">"><br />
 							</label>
 	
 							<label for="Author"><#ERROR name="ERRORAuthor">
