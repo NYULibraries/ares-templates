@@ -30,6 +30,8 @@
 							<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
 							<p><#INCLUDE filename="include_viewdelete.html"></p>
+
+							<div id="LoanPeriodDiv"><#OPTION name="LoanPeriod" isSharedListItem="False" SitePeriods="True" headerText="<label for='LoanPeriod'><#ERROR Name='ERRORLoanPeriod'><strong><span class='<#VALIDATION name='ERRORLoanPeriod'>'>Loan Period for Physical Items</span></strong>" footerText="<br /></label>"></div>
 							
 							<label for="Title"><#ERROR Name="ERRORTitle">					         		
 								<strong>

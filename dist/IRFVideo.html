@@ -21,10 +21,12 @@
 	
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
 						<fieldset aria-labelledby="reserve_item_video_heading">
-							<h1 tabindex="0" id="reserve_item_video_heading">Reserve Item: Video (Shanghai Campus Only)</h1>
+							<h1 tabindex="0" id="reserve_item_video_heading">Reserve Item: Video</h1>
 
 							<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
+
+							<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
 	
 							<label for="Title"> <#ERROR Name="ERRORTitle">
 								<strong>
