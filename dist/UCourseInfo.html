@@ -51,7 +51,7 @@ var sessionid = '<#PARAM name="SessionID"/>';
 				<input type="hidden" name="action" value="20" />
 				<input type="hidden" name="CourseID" value="<#COURSE field="CourseID"/>" />
 	 			<input type="hidden" name="SessionID" value="<#PARAM name="SessionID"/>"/>
-				<#TABLE class="student-table filterTable" id="SearchResults" name="Item" type="CourseItems" headerText="Reserve Items" LinkType="ItemView" IconDirect="True" LinkColumn="BothTitlesViewedIcon"  column="BothTitlesViewedIcon:Title" column="Author:Author" column="InactiveDate:Available until" column="Tags:Tags" HotList="Yes" hotListAdd="True" hotListAddText="Add checked items to My Favorites" hotListDelete="True" hotListDeleteText="Remove checked items from My Favorites" UnreadItem="<img src='images/new.gif' alt='New Item'/>" ReadItem="" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course.">		
+				<#TABLE class="student-table filterTable" id="SearchResults" name="Item" type="CourseItems" headerText="Reserve Items" LinkType="ItemView" IconDirect="True" LinkColumn="BothTitlesViewedIcon"  column="BothTitlesViewedIcon:Title" column="Author:Author" column="CallNumber:Call Number" column="InactiveDate:Available until" column="Tags:Tags" HotList="Yes" hotListAdd="True" hotListAddText="Add checked items to My Favorites" hotListDelete="True" hotListDeleteText="Remove checked items from My Favorites" UnreadItem="<img src='images/new.gif' alt='New Item'/>" ReadItem="" NoDataAction="ShowMessage" NoDataMessage="There are no items in this course.">		
 				</form>
 				</div>
 			</main>
