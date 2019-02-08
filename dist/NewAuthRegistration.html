@@ -18,9 +18,9 @@
                         class="f-wrap-request">
                         <input type="hidden" name="Action" value="11" />
                         <input type="hidden" name="Form" value="87" />
-                        <input type="hidden" name="SessionID" value="<#PARAM name=" SessionID">">
-                        <input type="hidden" name="LibraryID" value="<#PARAM name=" LibraryID">">
-                        <input type="hidden" name="ExternalUserID" value="<#PARAM name=" Username">">
+                        <input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+                        <input type="hidden" name="LibraryID" value="<#PARAM name="LibraryID">">
+                        <input type="hidden" name="ExternalUserID" value="<#PARAM name="Username">">
                         <fieldset aria-labelledby="user_information_heading">
                             <div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
                             <h1 tabindex="0" id="user_information_heading">User Information</h1>
@@ -32,10 +32,10 @@
                                 <#ERROR Name="ERRORUsername">
                                     <strong>
                                         <span aria-hidden="true" class="req">*</span>
-                                        <span class="<#VALIDATION name=" ERRORUsername">">Username</span>
+                                        <span class="<#VALIDATION name="ERRORUsername">">Username</span>
                                     </strong>
                                     <input aria-required="true" required="true" id="Username" name="Username"
-                                        type="text" size="40" class="f-name" value="<#PARAM name=" Username" />"
+                                        type="text" size="40" class="f-name" value="<#PARAM name="Username" />"
                                     disabled="disabled"><br />
                             </label>
                             <label for="FirstName">
@@ -43,21 +43,21 @@
                                     <#ERROR Name="ERRORFirstName"><span class="req">*</span>First Name
                                 </b>
                                 <input id="FirstName" name="FirstName" type="text" size="40" class="f-name"
-                                    value="<#PARAM name=" FirstName" />"><br />
+                                    value="<#PARAM name="FirstName" />"><br />
                             </label>
                             <label for="LastName">
                                 <b>
                                     <#ERROR Name="ERRORLastName"><span class="req">*</span>Last Name
                                 </b>
                                 <input id="LastName" name="LastName" type="text" size="40" class="f-name"
-                                    value="<#PARAM name=" LastName" />"><br />
+                                    value="<#PARAM name="LastName" />"><br />
                             </label>
                             <label for="EMailAddress">
                                 <b>
                                     <#ERROR Name="ERROREMailAddress"><span class="req">*</span>Email Address
                                 </b>
                                 <input id="EMailAddress" name="EMailAddress" type="text" size="40"
-                                    class="f-name" value="<#PARAM name=" EmailAddress" />"><br />
+                                    class="f-name" value="<#PARAM name="EmailAddress" />"><br />
                             </label>
                             <input class="f-submit" type="submit" name="SubmitButton"
                                 value="Submit Information" />
