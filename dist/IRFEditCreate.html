@@ -51,24 +51,6 @@
 								Use this form to copy and paste items from your syllabus. Please note if you require rush processing it is better to use the book, article, or chapter forms.
 							</h3>
 	
-							<label for="Notes"><#ERROR name="ERRORNotes">
-								<strong>
-									<span class="<#VALIDATION name="ERRORNotes">">Notes</span><br/>
-									<span class="note" aria-hidden="true" id="notes_note">Put any information here that may be pertinent to Reserves Staff.</span>
-								</strong>
-								<textarea aria-describedby="notes_note" id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea><br /><br />
-	
-								<#TABLE class="instructor-table-nohover" name="ItemNotes" headerText="Previous Notes" noDataAction="ShowNothing" noDataMessage="No Notes" column="Note" column="AddedBy" column="NoteDate" column="NoteType" ExcludeNoteTypes="Staff,Copyright">
-							</label>
-	
-							<label for="ItemTags"><#ERROR name="ItemTags">
-								<strong>
-									<span class="<#VALIDATION name="ItemTags">">Tags</span><br/>
-									<span class="note" aria-hidden="true" id="tags_note">Comma separated list of tags to be assigned to this Item</span>
-								</strong>
-								<textarea aria-describedby="tags_note" id="ItemTags" name="ItemTags" rows="4"><#ITEM field="Tags" TagType="Instructor"/></textarea><br />
-							</label>
-	
 							<label for="ItemText"><#ERROR name="ERRORItemContent">
 								<strong>
 									<span class="<#VALIDATION name="ItemText">" tabindex="0">Item Text</span><br />
