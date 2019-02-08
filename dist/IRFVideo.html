@@ -27,7 +27,15 @@
 							<span id="error_status_description">Error status</span>
 
 							<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
-	
+
+							<label for="ItemFormatAudioVideo"><#ERROR name="ERRORItemFormatAudioVideo">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORItemFormatAudioVideo">">Select an item type <span class="sr-only">(required)</span></span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemFormatAudioVideo" SelectedValue="<#PARAM name=ItemFormatAudioVideo>" Size="1"><br />
+							</label>
+
 							<label for="Title"> <#ERROR Name="ERRORTitle">
 								<strong>
 									<span aria-hidden="true" class="req">*</span><span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
@@ -85,9 +93,11 @@
 	
 							<label for="CallNumber"><#ERROR name="ERRORCallNumber">
 								<strong>
-									<span class="<#VALIDATION name="ERRORCallNumber">">Call Number</span>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORCallNumber">">Call Number</span><br />
+									<span class="note" aria-hidden="true" id="call_number_note">If no call number, please use N/A</span>
 								</strong>
-								<input id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" value="<#PARAM Name="callnumber"/>"><br />
+								<input aria-describedby="call_number_note" aria-required="true" required="true" id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" value="<#PARAM Name="callnumber"/>"><br />
 							</label>
 	
 							<label for="ItemInfo3"><#ERROR name="ERRORItemInfo3">
@@ -147,7 +157,7 @@
 									<span id="supply_method_link_label">The item should link to a website</span>
 									<br />
 								</fieldset>
-								<div aria-hidden="true" style="display:none;"></div>
+								<div aria-hidden="true" style="clear:both;"></div>
 							</label>
 	
 							<label for="URL"><#ERROR name="ERRORURL">
