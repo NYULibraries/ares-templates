@@ -136,6 +136,14 @@
 								</strong>
 								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM Name="citedin"/>"/><br />
 							</label>
+
+							<label for="ItemInfo2"><#ERROR name="ERRORItemInfo2">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORItemInfo2">">Is this a required book that students must purchase? <span class="sr-only">(required)</span></span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo2" SelectedValue="<#PARAM name=ItemInfo2>" Size="1"><br />
+							</label>
 	
 	                        <#TABLE class="instructor-table filterTable" name="CourseItemRestrictions" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
 							
