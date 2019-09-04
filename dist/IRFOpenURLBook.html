@@ -109,6 +109,22 @@
 								</strong>
 								<textarea aria-describedby="tags_note" id="ItemTags" name="ItemTags" rows="4"><#PARAM name="ItemTags"/></textarea><br />
 							</label>
+
+							<label for="ItemInfo2"><#ERROR name="ERRORItemInfo2">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORItemInfo2">">Is this a required book that students must purchase? <span class="sr-only">(required)</span></span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo2" SelectedValue="<#PARAM name=ItemInfo2>" Size="1"><br />
+							</label>
+
+							<label for="ItemInfo3"><#ERROR name="ERRORItemInfo3">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORItemInfo3">">Alternate Edition Acceptable? <span class="sr-only">(required)</span></span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo3" SelectedValue="<#PARAM name=ItemInfo3>" Size="1"><br />
+							</label>
 	
 							<label><#ERROR name="ERRORSupplyMethod">
 								<strong>
@@ -135,14 +151,6 @@
 									<br /><span class="note" aria-hidden="true" id="citedin_note">Examples are Dissertation Abstracts, Dialog (specify which database), or a specific journal or book.</span>
 								</strong>
 								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM Name="citedin"/>"/><br />
-							</label>
-
-							<label for="ItemInfo2"><#ERROR name="ERRORItemInfo2">
-								<strong>
-									<span aria-hidden="true" class="req">*</span>
-									<span class="<#VALIDATION name="ERRORItemInfo2">">Is this a required book that students must purchase? <span class="sr-only">(required)</span></span>
-								</strong>
-								<#OPTION name="Custom" GroupName="ItemInfo2" SelectedValue="<#PARAM name=ItemInfo2>" Size="1"><br />
 							</label>
 	
 	                        <#TABLE class="instructor-table filterTable" name="CourseItemRestrictions" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
