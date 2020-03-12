@@ -2,11 +2,18 @@
 
 NYU customizations of the ARes proprietary templates.
 
+[https://ares.library.nyu.edu](https://ares.library.nyu.edu)
+
 ### Connecting to ARes server
 
-You can SFTP (or use `lftp` for automation) to the ARes server with the credentials provided by the vendor. There are two root folder: `RemoteAuth` and `AresAuth`. We are using the `RemoteAuth` version so do any custom work only after `cd`-ing to that directory.
+You can SFTP (or use `lftp` for automation) to the ARes server with the credentials provided by the vendor. There are two root folders: `RemoteAuth` and `AresAuth`. We are using both depending on where the user comes from. `RemoteAuth` directory will forward users to the institution's SSO screen to login, but the `AresAuth` one is the one used from within NYU Classes. The functionality is supposed to be identical.
 
-### Use
+The two URLs are:
+
+- [https://ares.library.nyu.edu/remoteauth/ares.dll](https://ares.library.nyu.edu/remoteauth/ares.dll)
+- [https://ares.library.nyu.edu/aresauth/ares.dll](https://ares.library.nyu.edu/aresauth/ares.dll)
+
+### Usage
 
 Make your changes in the `./dist` directory and run `./ftp.sh` to deploy changes to the ARes server. 
 
@@ -14,11 +21,13 @@ Make your changes in the `./dist` directory and run `./ftp.sh` to deploy changes
 
 #### TestWeb
 
-ARes provides a copy of the application in the `TestWeb` folder which is accessible from [https://ares.library.nyu.edu/remoteauth/TestWeb/ares.dll](https://ares.library.nyu.edu/remoteauth/TestWeb/ares.dll). You should use this folder as a staging environment before merging into the top-level directory, which contains the public-facing pages.
+ARes provides a copy of the application in the `TestWeb` folder which is accessible from [https://ares.library.nyu.edu/aresauth/TestWeb/ares.dll](https://ares.library.nyu.edu/aresauth/TestWeb/ares.dll). You should use this folder as a staging environment before merging into the top-level directory, which contains the public-facing pages.
+
+The `ftp.sh` script will upload the same files to both the `RemoteAuth` and the `AresAuth` directories. **Note:** `TestWeb` directory only works as a staging environment in the `AresAuth` directory.
 
 #### Production
 
-Pages updated in the top-level `RemoteAuth` directory are instantly reflected in the web inteface.
+Pages updated in the top-level `RemoteAuth` and `AresAuth` directories are instantly reflected in the web inteface.
 
 ### Road map
 
