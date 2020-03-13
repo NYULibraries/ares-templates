@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Usage: ./upload.sh myUser 'myPa55w0rd!' '*.html' [testweb]
 

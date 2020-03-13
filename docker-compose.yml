@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+
+  deploy:
+    image: ares-templates-deploy
+    build: .
+    environment:
+      - USERNAME
+      - PASSWORD
+        #      - PATTERN
+
