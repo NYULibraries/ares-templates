@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Usage: ./upload.sh '*.html' [testweb]
+# Usage: ./upload.sh '*.html' [prod]
 # Must set $USERNAME and $PASSWORD as environment variables
 
 if [ -z "$USERNAME" ] || [ -z "$PASSWORD" ]
@@ -15,10 +15,10 @@ PATTERN=$1
 ENV=$2
 HOST="sftp://ares.library.nyu.edu"
 
-if [[ $ENV == 'testweb' ]]; then
-  ENV_FOLDER='/TestWeb'
-else
+if [[ $ENV == 'prod' ]]; then
   ENV_FOLDER=''
+else
+  ENV_FOLDER='/TestWeb'
 fi
 
 lftp -u $USERNAME,$PASSWORD -e "cd RemoteAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $HOST

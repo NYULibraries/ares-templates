@@ -13,9 +13,45 @@ The two URLs are:
 - [https://ares.library.nyu.edu/remoteauth/ares.dll](https://ares.library.nyu.edu/remoteauth/ares.dll)
 - [https://ares.library.nyu.edu/aresauth/ares.dll](https://ares.library.nyu.edu/aresauth/ares.dll)
 
+RemoteAuth authenticates via Shibboleth, while AresAuth authenticates via NYU Classes. However, authenticating to one gives access to both.
+
 ### Usage
 
-Make your changes in the `./dist` directory and run `./ftp.sh` to deploy changes to the ARes server. 
+Make your changes in the `./dist` directory and run `./ftp.sh` to deploy changes to the ARes server. You must set `$USERNAME` and `$PASSWORD` environment variables to authenticate.
+
+To deploy all files to TestWeb:
+
+`./dist.sh`
+
+To deploy a specific file to TestWeb:
+
+`./dist.sh 'include_header.html'`
+
+To deploy all files to production:
+
+`./dist.sh '*.html' prod`
+
+To deploy a specific file to production:
+
+`./dist.sh 'include_header.html' prod`
+
+## Docker
+
+To deploy all files to TestWeb:
+
+`docker-compose run deploy`
+
+To deploy a specific file to TestWeb:
+
+`docker-compose run deploy 'include_header.html'`
+
+To deploy all files to production:
+
+`docker-compose run deploy '*.html' prod`
+
+To deploy a specific file to production:
+
+`docker-compose run deploy 'include_header.html' prod`
 
 ### Environments
 
