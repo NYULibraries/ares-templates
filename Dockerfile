@@ -6,4 +6,4 @@ RUN mkdir ~/.ssh && ssh-keyscan -H ares.library.nyu.edu >> ~/.ssh/known_hosts
 WORKDIR /app
 COPY . .
 
-CMD ["sh", "-c", "./ftp.sh ${USERNAME} ${PASSWORD} '*.html' testweb"]
+CMD ["sh", "-c", "./ftp.sh '*.html' testweb"]

@@ -1,11 +1,18 @@
 #!/bin/sh
 
-# Usage: ./upload.sh myUser 'myPa55w0rd!' '*.html' [testweb]
+# Usage: ./upload.sh '*.html' [testweb]
+# Must set $USERNAME and $PASSWORD as environment variables
 
-USERNAME=$1
-PASSWORD=$2
-PATTERN=$3
-ENV=$4
+if [ -z "$USERNAME" ] || [ -z "$PASSWORD" ]
+then
+  echo "Must specify \$USERNAME and \$PASSWORD for authentication"
+  exit 1
+fi
+
+#USERNAME=$1
+#PASSWORD=$2
+PATTERN=$1
+ENV=$2
 HOST="sftp://ares.library.nyu.edu"
 
 if [[ $ENV == 'testweb' ]]; then
