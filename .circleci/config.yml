@@ -3,7 +3,7 @@ docker-defaults: &docker-defaults
   docker:
     - image: quay.io/nyulibraries/circleci_docker:18.06.3-dc-1.23.2-0
       environment:
-        - IMAGE_NAME=${IMAGE_NAME}
+        - IMAGE_NAME=ares-templates
   working_directory: ~/app
 
 build_docker: &build_docker
