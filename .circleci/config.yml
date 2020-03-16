@@ -44,9 +44,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - <<: *auth_quay
-      - <<: *pull_docker
+        #- <<: *pull_docker
       - <<: *build_docker
+      - <<: *auth_quay
       - <<: *push_docker
 
   deploy_prod:
@@ -54,9 +54,9 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - <<: *auth_quay
-      - <<: *pull_docker
+        #- <<: *pull_docker
       - <<: *build_docker
+      - <<: *auth_quay
       - <<: *push_docker
 
 workflows:
