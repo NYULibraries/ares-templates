@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # Usage: ./upload.sh '*.html' [prod]
 # Must set $USERNAME and $PASSWORD as environment variables
@@ -15,7 +15,8 @@ PATTERN=$1
 ENV=$2
 HOST="sftp://ares.library.nyu.edu"
 
-if [[ $ENV == 'prod' ]]; then
+if [ -n "$ENV" ] && [[ $ENV == 'prod' ]]
+then
   ENV_FOLDER=''
 else
   ENV_FOLDER='/TestWeb'
