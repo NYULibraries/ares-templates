@@ -17,7 +17,7 @@ RemoteAuth authenticates via Shibboleth, while AresAuth authenticates via NYU Cl
 
 ### Usage
 
-Make your changes in the `./dist` directory and run `./ftp.sh` to deploy changes to the ARes server. You must set `$USERNAME` and `$PASSWORD` environment variables to authenticate.
+Make your changes in the `./dist` directory and run `./ftp.sh` to deploy changes to the ARes server. You must set `$SFTP_USERNAME` and `$SFTP_PASSWORD` environment variables to authenticate.
 
 To deploy all files to TestWeb:
 
@@ -36,6 +36,8 @@ To deploy a specific file to production:
 `./dist.sh 'include_header.html' prod`
 
 ## Docker
+
+Again, you must set credentials in environment variables either on the host or via an env file.
 
 To deploy all files to TestWeb:
 
