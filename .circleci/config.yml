@@ -48,7 +48,6 @@ jobs:
       - <<: *build_docker
       - <<: *auth_quay
       - <<: *push_docker
-
   deploy_prod:
     <<: *docker-defaults
     steps:
