@@ -7,7 +7,8 @@ RUN apk --no-cache add lftp openssh
 
 USER docker
 
-RUN mkdir ~/.ssh && ssh-keyscan -H ares.library.nyu.edu >> ~/.ssh/known_hosts
+ENV ARES_HOST "ares.library.nyu.edu"
+RUN mkdir ~/.ssh && ssh-keyscan -H "$ARES_HOST">> ~/.ssh/known_hosts
 
 WORKDIR /app
 COPY . .

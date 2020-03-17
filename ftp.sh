@@ -13,7 +13,7 @@ fi
 #PASSWORD=$2
 PATTERN=$1
 ENV=$2
-HOST="sftp://ares.library.nyu.edu"
+SFTP_HOST="sftp://$ARES_HOST"
 
 if [ -n "$ENV" ] && [[ $ENV == 'prod' ]]
 then
@@ -22,5 +22,5 @@ else
   ENV_FOLDER='/TestWeb'
 fi
 
-lftp -u $USERNAME,$PASSWORD -e "cd RemoteAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $HOST
-lftp -u $USERNAME,$PASSWORD -e "cd AresAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $HOST
+lftp -u $USERNAME,$PASSWORD -e "cd RemoteAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST
+lftp -u $USERNAME,$PASSWORD -e "cd AresAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST
