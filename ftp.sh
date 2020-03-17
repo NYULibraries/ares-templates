@@ -1,18 +1,24 @@
-#!/bin/bash
+#!/bin/sh -e
 
-# Usage: ./upload.sh myUser 'myPa55w0rd!' '*.html' [testweb]
+# Usage: ./upload.sh '*.html' [prod]
+# Must set $SFTP_USERNAME and $SFTP_PASSWORD as environment variables
 
-USERNAME=$1
-PASSWORD=$2
-PATTERN=$3
-ENV=$4
-HOST="sftp://ares.library.nyu.edu"
-
-if [[ $ENV == 'testweb' ]]; then
-  ENV_FOLDER='/TestWeb'
-else
-  ENV_FOLDER=''
+if [ -z "$SFTP_USERNAME" ] || [ -z "$SFTP_PASSWORD" ]
+then
+  echo "Must specify \$SFTP_USERNAME and \$SFTP_PASSWORD for authentication"
+  exit 1
 fi
 
-lftp -u $USERNAME,$PASSWORD -e "cd RemoteAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $HOST
-lftp -u $USERNAME,$PASSWORD -e "cd AresAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $HOST
+PATTERN=$1
+ENV=$2
+SFTP_HOST="sftp://$ARES_HOSTNAME"
+
+if [ -n "$ENV" ] && [[ $ENV == 'prod' ]]
+then
+  ENV_FOLDER=''
+else
+  ENV_FOLDER='/TestWeb'
+fi
+
+lftp -u $SFTP_USERNAME,$SFTP_PASSWORD -e "cd RemoteAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST
+lftp -u $SFTP_USERNAME,$SFTP_PASSWORD -e "cd AresAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST

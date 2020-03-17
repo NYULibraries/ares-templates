@@ -1,0 +1,10 @@
+Dockerfile
+docker-compose.yml
+.git
+.gitignore
+
+upload.sh
+test.html
+web.config
+Ares.dll
+.env
