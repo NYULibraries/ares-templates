@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh -ex
 
 # Usage: ./upload.sh '*.html' [prod]
 # Must set $SFTP_USERNAME and $SFTP_PASSWORD as environment variables
