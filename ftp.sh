@@ -1,4 +1,4 @@
-#!/bin/sh -ex
+#!/bin/sh -e
 
 # Usage: ./upload.sh '*.html' [prod]
 # Must set $SFTP_USERNAME and $SFTP_PASSWORD as environment variables
@@ -20,5 +20,6 @@ else
   ENV_FOLDER='/TestWeb'
 fi
 
+ssh-keyscan -H "$ARES_HOSTNAME" >> ~/.ssh/known_hosts
 lftp -u $SFTP_USERNAME,$SFTP_PASSWORD -e "cd RemoteAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST
 lftp -u $SFTP_USERNAME,$SFTP_PASSWORD -e "cd AresAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST
