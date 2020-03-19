@@ -9,6 +9,12 @@ then
   exit 1
 fi
 
+if [ -z "$ARES_HOSTNAME" ] 
+then
+  echo "Must specify \$ARES_HOSTNAME"
+  exit 1
+fi
+
 PATTERN=$1
 ENV=$2
 SFTP_HOST="sftp://$ARES_HOSTNAME"
