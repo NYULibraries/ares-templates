@@ -9,6 +9,12 @@ then
   exit 1
 fi
 
+if [ -z "$ARES_HOSTNAME" ] 
+then
+  echo "Must specify \$ARES_HOSTNAME"
+  exit 1
+fi
+
 PATTERN=$1
 ENV=$2
 SFTP_HOST="sftp://$ARES_HOSTNAME"
@@ -20,5 +26,6 @@ else
   ENV_FOLDER='/TestWeb'
 fi
 
+ssh-keyscan -H "$ARES_HOSTNAME" >> ~/.ssh/known_hosts
 lftp -u $SFTP_USERNAME,$SFTP_PASSWORD -e "cd RemoteAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST
 lftp -u $SFTP_USERNAME,$SFTP_PASSWORD -e "cd AresAuth$ENV_FOLDER; mirror -R ./dist/custom ./custom; mput ./dist/$PATTERN; exit" $SFTP_HOST

@@ -13,5 +13,5 @@ RUN mkdir ~/.ssh && ssh-keyscan -H "$ARES_HOSTNAME" >> ~/.ssh/known_hosts
 WORKDIR /app
 COPY . .
 
-ENTRYPOINT ["./ftp.sh"]
+ENTRYPOINT ["/app/ftp.sh"]
 CMD ["'*.html'"]
