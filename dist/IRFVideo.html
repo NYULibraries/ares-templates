@@ -121,15 +121,6 @@
 								</strong>
 								<input id="NeededBy" name="NeededBy" type="text" size="40" class="f-name" value="<#PARAM name="NeededBy">"><br />
 							</label>
-							
-							<label for="Notes"><#ERROR name="ERRORNotes">
-								<strong>
-									<span class="<#VALIDATION name="ERRORNotes">">Notes</span><br />
-									<span class="note" aria-hidden="true" id="notes_note">Put any information here that may help us find the item, as well as any other pertinent information.</span>
-								</strong>
-								<textarea aria-describedby="notes_note" id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea>
-								<br />
-							</label>
 	
 							<label for="ItemTags"><#ERROR name="ItemTags">
 								<strong>
@@ -174,12 +165,12 @@
 								<#OPTION name="Custom" GroupName="NatureOfWork" SelectedValue="<#PARAM name=NatureOfWork>" Size="1"><br />
 							</label>
 
-							<label for="NatureOfWorkNotes"><#ERROR name="ERRORNatureOfWorkNotes">
+							<label for="Notes"><#ERROR name="ERRORNotes">
 								<strong>
-									<span class="<#VALIDATION name="ERRORNatureOfWorkNotes">">If excerpt(s), please describe as clearly as possible, with song titles, track numbers, etc. (Maximum of 5: more than that will default to the whole album).</span><br />
-									<span class="note" aria-hidden="true" id="natureofwork_notes_note"><em>NOTE: Excerpting available for audio recordings only. Scene selections/clips not possible for videos.</em></span>
+									<span class="<#VALIDATION name="ERRORNotes">">If excerpt(s), please describe as clearly as possible, with song titles, track numbers, etc. (Maximum of 5: more than that will default to the whole album).</span><br />
+									<span class="note" aria-hidden="true" id="notes_note"><em>NOTE: Excerpting available for audio recordings only. Scene selections/clips not possible for videos.</em></span>
 								</strong>
-								<textarea aria-describedby="natureofwork_notes_note" id="NatureOfWorkNotes" name="NatureOfWorkNotes" rows="2" cols="40" class="f-name"><#PARAM Name="NatureOfWorkNotes"/></textarea>
+								<textarea aria-describedby="notes_note" id="Notes" name="Notes" rows="2" cols="40" class="f-name"><#PARAM Name="Notes"/></textarea>
 								<br />
 							</label>
 
