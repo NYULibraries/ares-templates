@@ -166,6 +166,14 @@
 								</strong>
 								<input id="URL" name="URL" type="text" size="40" class="f-name" value="<#PARAM name="URL">"><br />
 							</label>
+
+							<label for="NatureOfWork"><#ERROR name="ERRORNatureOfWork">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORNatureOfWork">">For audio recordings, do you want the entire album or selected excerpt(s)? <span class="sr-only">(required)</span></span>
+								</strong>
+								<#OPTION name="Custom" GroupName="NatureOfWork" SelectedValue="<#PARAM name=NatureOfWork>" Size="1"><br />
+							</label>
 	
 							<h2>Where did you learn about this item?</h2>
 	
@@ -176,6 +184,7 @@
 								</strong>
 								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM Name="citedin"/>"/><br />
 							</label>
+							
 	
 							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
 	
