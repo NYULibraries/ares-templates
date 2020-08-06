@@ -184,6 +184,22 @@
 								</strong>
 								<#OPTION name="Custom" GroupName="NatureOfWork" SelectedValue="<#PARAM name=NatureOfWork>" Size="1"><br />
 							</label>
+
+							<label for="NatureOfWorkNotes"><#ERROR name="ERRORNatureOfWorkNotes">
+								<strong>
+									<span class="<#VALIDATION name="ERRORNatureOfWorkNotes">">If excerpt(s), please describe as clearly as possible, with song titles, track numbers, etc. (Maximum of 5: more than that will default to the whole album).</span><br />
+									<span class="note" aria-hidden="true" id="natureofwork_notes_note"><em>NOTE: Excerpting available for audio recordings only. Scene selections/clips not possible for videos.</em></span>
+								</strong>
+								<textarea aria-describedby="natureofwork_notes_note" id="NatureOfWorkNotes" name="NatureOfWorkNotes" rows="2" cols="40" class="f-name"><#PARAM Name="NatureOfWorkNotes"/></textarea>
+								<br />
+							</label>
+
+							<label for="ItemInfo5"><#ERROR name="ERRORItemInfo5">
+								<strong>
+									<span class="<#VALIDATION name="ERRORItemInfo5">">Include scans of accompanying booklet and outer covers?</span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo5" SelectedValue="<#PARAM name=ItemInfo5>" Size="1"><br />
+							</label>
 	
 							<h2>Where did you learn about this item?</h2>
 							
