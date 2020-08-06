@@ -97,31 +97,6 @@
 								</strong>
 								<input id="NeededBy" name="NeededBy" type="text" size="40" class="f-name" value="<#PARAM name="NeededBy">"><br />
 							</label>
-										
-							<label><#ERROR name="ERRORSupplyMethod">
-								<strong>
-									<span class="<#VALIDATION name="ERRORSupplyMethod">" tabindex="0">How will this item be supplied?</span>
-								</strong>
-								<fieldset class="fields">
-									<legend class="offscreen">How will this item be supplied?</legend>
-									<input aria-labelledby="supply_method_none_label" id="None" type="radio" checked="checked" name="SupplyMethod" value="None" class="f-radio" />
-									<span id="supply_method_none_label">I do not want to change the actual reserve content</span>
-									<br />		
-									
-									<input aria-labelledby="supply_method_deliver_label" id="WillDeliver" type="radio" name="SupplyMethod" value="WillDeliver" class="f-radio" />
-									<span id="supply_method_deliver_label">I will bring a personal copy to the library</span>
-									<br />
-								
-									<input aria-labelledby="supply_method_staff_label" id="StaffSearch" type="radio" name="SupplyMethod" value="StaffSearch" class="f-radio" />
-									<span id="supply_method_staff_label">Please have library staff provide the material</span>
-									<br />
-									
-									<input aria-labelledby="supply_method_link_label" id="WebLink" type="radio" name="SupplyMethod" value="WebLink" class="f-radio" />
-									<span id="supply_method_link_label">The item should link to a website</span>
-									<br />							
-								</fieldset>
-								<div aria-hidden="true" style="clear:both;"></div>
-							</label>
 	
 							<label for="URL"><#ERROR name="ERRORURL">
 								<strong>
