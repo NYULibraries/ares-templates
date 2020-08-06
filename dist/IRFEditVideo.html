@@ -97,14 +97,6 @@
 								</strong>
 								<input id="NeededBy" name="NeededBy" type="text" size="40" class="f-name" value="<#PARAM name="NeededBy">"><br />
 							</label>
-	
-							<label for="ItemTags"><#ERROR name="ItemTags">
-								<strong>
-									<span class="<#VALIDATION name="ItemTags">">Tags</span><br />
-									<span class="note" aria-hidden="true" id="tags_note">Comma separated list of tags to be assigned to this Item</span>
-								</strong>
-								<textarea aria-describedby="tags_note" id="ItemTags" name="ItemTags" rows="4"><#ITEM field="Tags" TagType="Instructor"/></textarea><br />
-							</label>
 										
 							<label><#ERROR name="ERRORSupplyMethod">
 								<strong>
