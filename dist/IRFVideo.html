@@ -18,6 +18,8 @@
 						<input type="hidden" name="ItemType" value="MON"/>
 						<input type="hidden" name="format" value="Video"/>
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+						<input type="hidden" name="PickupLocation" value="AFC" />
+						<input type="hidden" name="ProcessingLocation" value="AFC" />
 	
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
 						<fieldset aria-labelledby="reserve_item_video_heading">
@@ -25,8 +27,6 @@
 
 							<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
-
-							<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Pickup Location for Physical Items</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
 
 							<label for="ItemFormatAudioVideo"><#ERROR name="ERRORItemFormatAudioVideo">
 								<strong>
