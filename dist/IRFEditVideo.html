@@ -128,16 +128,6 @@
 								</strong>
 								<#OPTION name="Custom" GroupName="ItemInfo5" SelectedValue="<#PARAM name=ItemInfo5>" Size="1"><br />
 							</label>
-	
-							<h2>Where did you learn about this item?</h2>
-							
-							<label for="CitedIn"><#ERROR name="ERRORCitedIn">		
-								<strong>
-									<span class="<#VALIDATION name="ERRORCitedIn">">Where did you find this item cited?</span><br />
-									<span class="note" aria-hidden="true" id="citedin_note">Examples are Dissertation Abstracts, Dialog (specify which database), or a specific journal or book.</span>
-								</strong>
-								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM name="CitedIn"/>"/><br />
-							</label>
 						
 							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
 	
