@@ -1,10 +1,28 @@
-## ARes Templates
+# ARes Templates
 
 NYU customizations of the ARes proprietary templates.
 
 [https://ares.library.nyu.edu](https://ares.library.nyu.edu)
 
-### Connecting to ARes server
+## Editing Forms
+
+When editing forms make sure you edit both the creation and edit forms with the `IRF` prefix. The forms seem identical but the former is for creating new reserve items and the latter is for editing those items later on. For instance, if editing the Book form make change on the following two forms:
+
+```
+IRFBook.html
+IRFEditBook.html
+```
+
+**Note the following abbreviations:**
+
+```
+IRF = Instructor Request Form
+ISLRF = Instructor Shared List Request Form
+```
+
+We don't use the shared list functionality (i.e. `ISLRF`), so those forms shouldn't matter much.
+
+## Connecting to ARes server
 
 You can SFTP (or use `lftp` for automation) to the ARes server with the credentials provided by the vendor. There are two root folders: `RemoteAuth` and `AresAuth`. We are using both depending on where the user comes from. `RemoteAuth` directory will forward users to the institution's SSO screen to login, but the `AresAuth` one is the one used from within NYU Classes. The functionality is supposed to be identical.
 
@@ -70,6 +88,5 @@ Pages updated in the top-level `RemoteAuth` and `AresAuth` directories are insta
 ### Road map
 
 - Throw pages into static site generator (e.g. Jekyll, Hugo; implementation TBD) with wrapping templates to DRY up implementation and make automated deploys easier
-- Use Bootstrap to re-theme the pages responsively
-- Automate deploys to TestWeb and prod based on Gitflow, i.e. non-master to staging, master to prod
-- Containerize build process and deploy from K8s Jenkins
+- ~~Automate deploys to TestWeb and prod based on Gitflow, i.e. non-master to staging, master to prod~~
+- ~~Containerize build process and deploy from K8s Jenkins~~
