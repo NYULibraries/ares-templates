@@ -45,7 +45,7 @@
 								<strong>
 									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
-									<span class="note" aria-hidden="true" id="title_note">Please do not abbreviate unless your citation is abbreviated</span>
+									<span class="note" aria-hidden="true" id="title_note">(As shown in Bobcat)</span>
 								</strong>
 								<input aria-describedby="title_note" aria-required="true" required="true" name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />
 							</label>
@@ -53,7 +53,7 @@
 							<label for="Author"><#ERROR Name="ERRORAuthor">
 								<strong>
 									<span aria-hidden="true" class="req">*</span>
-									<span class="<#VALIDATION name="ERRORAuthor">">Director/Artist</span><br/>
+									<span class="<#VALIDATION name="ERRORAuthor">">Director/Recording Artist</span><br/>
 									<span class="note">(Last Name, First Name)</span>
 								</strong>
 								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
@@ -61,7 +61,7 @@
 							
 							<label for="Publisher"><#ERROR Name="ERRORPublisher">					
 								<strong>
-									<span class="<#VALIDATION name="ERRORPublisher">">Publisher</span>
+									<span class="<#VALIDATION name="ERRORPublisher">">Publisher/Record Label</span>
 								</strong>
 								<input id="Publisher" name="Publisher" type="text" size="40" class="f-name" value="<#PARAM name="Publisher"/>"><br />
 							</label>
@@ -76,11 +76,10 @@
 							
 							<label for="CallNumber"><#ERROR name="ERRORCallNumber">
 								<strong>
-									<span aria-hidden="true" class="req">*</span>
-									<span class="<#VALIDATION name="ERRORCallNumber">">Call Number</span><br />
-									<span class="note" aria-hidden="true" id="call_number_note">If no call number, please use N/A</span>
+									<span class="<#VALIDATION name="ERRORCallNumber">">Is the video or audio recording in BobCat as a physical item?</span><br />
+									<span class="note" aria-hidden="true" id="call_number_note">If yes, indicate the call number, including the prefix DVD, VHS, XCD, or XLP. <br />NOTE: Conventional DVD is the default format for video streaming. BluRay and VHS require extra processing time and will be digitized only if they are the only available option.</span>
 								</strong>
-								<input aria-describedby="call_number_note" aria-required="true" required="true" id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" value="<#PARAM name="CallNumber"/>"><br />
+								<input aria-describedby="call_number_note" id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" value="<#PARAM name="CallNumber"/>"><br />
 							</label>
 							
 							<label for="ItemInfo3"><#ERROR name="ERRORItemInfo3">
@@ -98,11 +97,12 @@
 								<input id="NeededBy" name="NeededBy" type="text" size="40" class="f-name" value="<#PARAM name="NeededBy">"><br />
 							</label>
 	
-							<label for="URL"><#ERROR name="ERRORURL">
+							<label for="Location"><#ERROR name="ERRORLocation">
 								<strong>
-									<span class="<#VALIDATION name="ERRORURL">">If you chose the item should link to a website above, please enter the URL</span>
+									<span class="<#VALIDATION name="ERRORLocation">">Is the video or audio recording in BobCat as an online streaming link?</span>
+									<span class="note" aria-hidden="true" id="location_note">If yes, copy and paste the Permalink here.</span>
 								</strong>
-								<input id="URL" name="URL" type="text" size="40" class="f-name" value="<#PARAM name="URL">"><br />
+								<input aria-describedby="location_note" id="Location" name="Location" type="text" size="40" class="f-name" value="<#PARAM name="Location">"><br />
 							</label>
 
 							<label for="NatureOfWork"><#ERROR name="ERRORNatureOfWork">
