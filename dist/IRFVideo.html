@@ -99,6 +99,14 @@
 								<input aria-describedby="location_note" id="Location" name="Location" type="text" size="40" class="f-name" value="<#PARAM name="Location">"><br />
 							</label>
 
+							<label for="CitedIn"><#ERROR name="ERRORCitedIn">
+								<strong>
+									<span class="<#VALIDATION name="ERRORCitedIn">">If the item is not already in BobCat, where did you find it cited?</span>
+									<span class="note" aria-hidden="true" id="citedin_note">(Please indicate your source and the URL if possible)</span>
+								</strong>
+								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="40" class="f-name" value="<#PARAM name="CitedIn">"><br />
+							</label>
+
 							<label for="NatureOfWork"><#ERROR name="ERRORNatureOfWork">
 								<strong>
 									<span class="<#VALIDATION name="ERRORNatureOfWork">">For audio recordings, do you want the entire album or selected excerpt(s)?</span>
