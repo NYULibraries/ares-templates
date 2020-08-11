@@ -20,7 +20,6 @@
 						<input type="hidden" name="ItemID" value="<#ITEM field="ItemID"/>">
 						<input type="hidden" name="Type" value="30"/>							
 						<input type="hidden" name="ItemType" value="MON"/>
-						<input type="hidden" name="format" value="Video"/>
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
 						
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
@@ -33,12 +32,16 @@
 
 							<div id="LoanPeriodDiv"><#OPTION name="LoanPeriod" isSharedListItem="False" SitePeriods="True" headerText="<label for='LoanPeriod'><#ERROR Name='ERRORLoanPeriod'><strong><span class='<#VALIDATION name='ERRORLoanPeriod'>'>Loan Period for Physical Items</span></strong>" footerText="<br /></label>"></div>
 							
-							<label for="ItemFormatAudioVideo"><#ERROR name="ERRORItemFormatAudioVideo">
+							<label for="ItemFormat"><#ERROR name="ERRORItemFormat">
 								<strong>
 									<span aria-hidden="true" class="req">*</span>
-									<span class="<#VALIDATION name="ERRORItemFormatAudioVideo">">Select an item type <span class="sr-only">(required)</span></span>
+									<span class="<#VALIDATION name="ERRORItemFormat">">Select an item type <span class="sr-only">(required)</span></span>
 								</strong>
-								<#OPTION name="Custom" GroupName="ItemFormatAudioVideo" SelectedValue="<#PARAM name=ItemFormatAudioVideo>" Size="1"><br />
+								<select name="Format" id="ItemFormat"> 
+									<option selected><#PARAM name="ItemFormat"></option>								
+									<option value="Audio">Audio</option>
+									<option value="Video">Video</option>
+								</select><br />
 							</label>
 
 							<label for="Title"><#ERROR Name="ERRORTitle">					         		
@@ -87,7 +90,7 @@
 									<span aria-hidden="true" class="req">*</span>
 									<span class="<#VALIDATION name="ERRORItemInfo3">">Alternate Edition Acceptable? <span class="sr-only">(required)</span></span>
 								</strong>
-								<#OPTION name="Custom" GroupName="ItemInfo3" SelectedValue="<#PARAM name=ItemInfo3>" Size="1"><br />
+								<#OPTION name="Custom" GroupName="ItemInfo3" SelectedValue="<#PARAM name="ItemInfo3">" Size="1"><br />
 							</label>
 							
 							<label for="NeededBy"><#ERROR name="ERRORNeededBy">
@@ -115,17 +118,17 @@
 							
 							<label for="NatureOfWork"><#ERROR name="ERRORNatureOfWork">
 								<strong>
-									<span class="<#VALIDATION name="ERRORNatureOfWork">">For audio recordings, do you want the entire album or selected excerpt(s)? </span>
+									<span class="<#VALIDATION name="ERRORNatureOfWork">">For audio recordings, do you want the entire album or selected excerpt(s)?</span>
 								</strong>
-								<#OPTION name="Custom" GroupName="NatureOfWork" SelectedValue="<#PARAM name=NatureOfWork>" Size="1"><br />
+								<#OPTION name="Custom" GroupName="NatureOfWork" SelectedValue="<#PARAM name="NatureOfWork">" Size="1"><br />
 							</label>
 
-							<label for="Notes"><#ERROR name="ERRORNotes">
+							<label for="ItemNote"><#ERROR name="ERRORItemNote">
 								<strong>
-									<span class="<#VALIDATION name="ERRORNotes">">If excerpt(s), please describe as clearly as possible, with song titles, track numbers, etc. (Maximum of 5: more than that will default to the whole album).</span><br />
+									<span class="<#VALIDATION name="ERRORItemNote">">If excerpt(s), please describe as clearly as possible, with song titles, track numbers, etc. (Maximum of 5: more than that will default to the whole album).</span><br />
 									<span class="note" aria-hidden="true" id="notes_note">NOTE: Excerpting available for audio recordings only. Scene selections/clips not possible for videos.</span>
 								</strong>
-								<textarea aria-describedby="notes_note" id="Notes" name="Notes" rows="2" cols="40" class="f-name"><#PARAM Name="Notes"/></textarea>
+								<textarea aria-describedby="notes_note" id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea>
 								<br />
 								<#TABLE class="instructor-table-nohover" name="ItemNotes" headerText="Previous Notes" noDataAction="ShowNothing" noDataMessage="No Notes" column="Note" column="AddedBy" column="NoteDate" column="NoteType" ExcludeNoteTypes="Staff,Copyright">
 							</label>
@@ -134,7 +137,7 @@
 								<strong>
 									<span class="<#VALIDATION name="ERRORItemInfo5">">Include scans of accompanying booklet and outer covers?</span>
 								</strong>
-								<#OPTION name="Custom" GroupName="ItemInfo5" SelectedValue="<#PARAM name=ItemInfo5>" Size="1"><br />
+								<#OPTION name="Custom" GroupName="ItemInfo5" SelectedValue="<#PARAM name="ItemInfo5">" Size="1"><br />
 							</label>
 						
 							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
