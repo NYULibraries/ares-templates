@@ -1,6 +1,6 @@
 # ARes Templates
 
-[![Web Services](https://img.shields.io/badge/NYU%20Libraries-Web%20Services-Black.svg)](https://shields.io/) 
+[![Web Services](https://img.shields.io/badge/Owner-LITS%20Web%20Services-Black.svg)](https://shields.io/) 
 
 NYU customizations of the ARes proprietary templates.
 
