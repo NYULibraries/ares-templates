@@ -17,8 +17,6 @@
 						<input type="hidden" name="Type" value="10"/>
 						<input type="hidden" name="ItemType" value="MON"/>
 						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
-						<input type="hidden" name="PickupLocation" value="AFC" />
-						<input type="hidden" name="ProcessingLocation" value="AFC" />
 	
 						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
 						<fieldset aria-labelledby="reserve_item_video_heading">
@@ -27,6 +25,8 @@
 							<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
 							<span id="error_status_description">Error status</span>
 
+							<#OPTION name="PickupLocation" selectedValue="<#CUSTOMIZATION name='DefaultPickupSite'>" headerText="<label for='PickupLocation'><strong><span class='<#VALIDATION name=ERRORPickupLocation>'>Processing Location</span></strong>" footerText="<br /></label>" onChange="getNewLoanPeriods(document.getElementById('PickupLocation').value);">
+
 							<label for="ItemFormat"><#ERROR name="ERRORItemFormat">
 								<strong>
 									<span aria-hidden="true" class="req">*</span>
@@ -34,9 +34,10 @@
 								</strong>
 								<select name="Format" id="ItemFormat"> 
 									<option selected><#PARAM name="ItemFormat"></option>								
-									<option value="DVD">DVD</option>
-									<option value="VHS/Videotape">VHS/Videotape</option>
 									<option value="CD audio">CD audio</option>
+									<option value="DVD">DVD</option>
+									<option value="Streaming">Streaming</option>
+									<option value="VHS/Videotape">VHS/Videotape</option>
 									<option value="Vinyl audio">Vinyl audio</option>
 								</select><br />
 							</label>
