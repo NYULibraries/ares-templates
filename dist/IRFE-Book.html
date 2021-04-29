@@ -154,8 +154,8 @@
 								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="20" class="f-name" value="<#PARAM Name="citedin"/>"/><br />
 							</label>
 	
-							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
-	
+							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" column=CourseNumber column=Name column=Semester column=StartDate column=StopDate IncludeJavascriptCalendar="No"/>	
+							
 							<input class="f-submit" type="submit" name="SubmitButton" value="Submit Item" />
 							<input class="f-submit" type="reset" name="ClearButton" value="Clear" />
 	

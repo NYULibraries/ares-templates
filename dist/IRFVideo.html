@@ -136,8 +136,8 @@
 								<#OPTION name="Custom" GroupName="ItemInfo5" SelectedValue="<#PARAM name="ItemInfo5">" Size="1"><br />
 							</label>
 		
-							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
-	
+							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" column=CourseNumber column=Name column=Semester column=StartDate column=StopDate IncludeJavascriptCalendar="No" />							
+							
 							<input class="f-submit" type="submit" name="SubmitButton" value="Submit Item" />
 							<input class="f-submit" type="reset" name="ClearButton" value="Clear" />
 	

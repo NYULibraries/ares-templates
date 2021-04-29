@@ -176,7 +176,8 @@
 								</strong>
 								<input id="URL" name="URL" type="text" size="40" class="f-name" value="<#PARAM name="URL">"><br />
 							</label>
-							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" IncludeJavascriptCalendar="No" calendarText=""/>
+							
+							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" column=CourseNumber column=Name column=Semester column=StartDate column=StopDate IncludeJavascriptCalendar="No" />							
 							
 							<input type="hidden" name="CopyrightRequired" value="<#PARAM name="CopyrightRequired"/>">
 							<input type="hidden" name="CopyrightObtained" value="<#PARAM name="CopyrightObtained"/>">
