@@ -1,0 +1,3 @@
+[submodule "hosting-ares-nyu"]
+	path = hosting-ares-nyu
+	url = git@github.com:AtlasSystems/hosting-ares-nyu.git
