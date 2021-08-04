@@ -15,4 +15,4 @@ if [[ $subdir_list != *" $1 "* ]]; then
   exit
 fi
 
-rsync -a -v --delete-after $dist_dir/$1/ src/*
+rsync -a -v --delete-after $dist_dir/$1/ src

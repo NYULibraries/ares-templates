@@ -10,14 +10,16 @@ if [[ -z "$1" ]]; then
   exit
 fi
 
-if [[ " dev prod " != *" $1 "* ]]; then
+if [[ "$1" == "dev" ]]; then
+  subdir_list=$subdir_list_dev
+elif [[ "$1" == "prod" ]]; then
+  subdir_list=$subdir_list_prod
+else
   echo "Invalid env, must be 'dev' or 'prod'"
   exit
 fi
 
-subdir_list=$subdir_list_$env
-
 for subdir in $subdir_list
 do
-  rsync -a -v --delete-after src/ $dist_dir/$subdir/
+  rsync -a -v --delete-after src/ $dist_dir/$subdir
 done
