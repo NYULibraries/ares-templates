@@ -63,10 +63,12 @@ jobs:
   test-dev:
     <<: *docker-defaults
     steps:
+      - checkout
       - <<: *test_dev
   test-prod:
     <<: *docker-defaults
     steps:
+      - checkout
       - <<: *test_dev
 
 workflows:
