@@ -16,10 +16,10 @@ elif [[ "$1" == "prod" ]]; then
   subdir_list=$subdir_list_prod
 else
   echo "Invalid env, must be 'dev' or 'prod'"
-  exit
+  exit 1
 fi
 
 for subdir in $subdir_list
 do
-  rsync -a -v --delete-after src/ $dist_dir/$subdir
+  rsync -a -v src/ $dist_dir/$subdir
 done
