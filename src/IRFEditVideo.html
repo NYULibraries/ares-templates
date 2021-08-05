@@ -143,7 +143,7 @@
 								<#OPTION name="Custom" GroupName="ItemInfo5" SelectedValue="<#PARAM name="ItemInfo5">" Size="1"><br />
 							</label>
 						
-							<#TABLE class="instructor-table" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" column=CourseNumber column=Name column=Semester column=StartDate column=StopDate IncludeJavascriptCalendar="No" />							
+							<#TABLE class="instructor-table filterTable" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" courseChoice="one" column=CourseCheck: column=CourseNumber column=Name column=Semester column=StartDate column=StopDate IncludeJavascriptCalendar="No" calendarText="" />													
 							
 							<input type="hidden" name="CopyrightRequired" value="<#PARAM name="CopyrightRequired"/>">
 							<input type="hidden" name="CopyrightObtained" value="<#PARAM name="CopyrightObtained"/>">

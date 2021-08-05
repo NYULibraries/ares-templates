@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-h1, h2, h3, h4, h5, h6, p, a, span, b, li, ul, ol, strong, input, table, label, select, textarea, button, #nav-secondary a, #nav-secondary .nav-section, div {
+h1, h2, h3, h4, h5, h6, p, a, span, b, li, ul, ol, strong, input, table, label, select, textarea, button, #nav-secondary a, #nav-secondary .nav-section, div, td, th, caption {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -97,4 +97,8 @@ input.f-submit:hover, button.f-submit:hover, #search input.f-submit:hover, table
 #search input.f-submit {
     height: auto;
     margin: 0px;
+}
+
+table.student-table tfoot input {
+    margin-right: 5px;
 }
