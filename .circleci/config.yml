@@ -37,6 +37,18 @@ push_docker: &push_docker
       docker push quay.io/nyulibraries/${IMAGE_NAME}:${BRANCH_NO_SLASH}
       docker push quay.io/nyulibraries/${IMAGE_NAME}:${BRANCH_NO_SLASH}-${CIRCLE_SHA1}
 
+test_dev: &test_dev
+  run:
+    name: Test Dev
+    command: |
+      ./test_compile.sh dev
+
+test_prod: &test_prod
+  run:
+    name: Test Prod
+    command: |
+      ./test_compile.sh prod
+
 version: 2
 jobs:
   build-image:
@@ -48,29 +60,29 @@ jobs:
       - <<: *build_docker
       - <<: *auth_quay
       - <<: *push_docker
-#  deploy-dev:
-#    <<: *docker-defaults
-#    steps:
-#      - setup_remote_docker
-#  deploy-prod:
-#    <<: *docker-defaults
-#    steps:
-#      - setup_remote_docker
+  test-dev:
+    <<: *docker-defaults
+    steps:
+      - <<: *test_dev
+  test-prod:
+    <<: *docker-defaults
+    steps:
+      - <<: *test_dev
 
 workflows:
   version: 2
   deploy:
     jobs:
       - build-image
-#      - deploy-dev:
-#          requires:
-#            - build-image
-#          filters:
-#            branches:
-#              ignore: master
-#      - deploy-prod:
-#          requires:
-#            - build-image
-#          filters:
-#            branches:
-#              only: master
+      - test-dev:
+          requires:
+            - build-image
+          filters:
+            branches:
+              ignore: master
+      - test-prod:
+          requires:
+            - build-image
+          filters:
+            branches:
+              only: master
