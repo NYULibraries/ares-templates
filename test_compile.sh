@@ -13,6 +13,8 @@ if [[ " dev prod " != *" $1 "* ]]; then
   exit 1
 fi
 
+git submodule sync && git submodule update --init
+
 ./compile.sh $1
 git -C $dist_dir update-index --refresh
 if ! git -C $dist_dir diff-index --quiet HEAD --; then
