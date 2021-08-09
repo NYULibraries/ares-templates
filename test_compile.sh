@@ -14,6 +14,7 @@ if [[ " dev prod " != *" $1 "* ]]; then
 fi
 
 git submodule sync && git submodule update --init
+git -C $dist_dir checkout master && git -C $dist_dir pull
 
 ./compile.sh $1
 git -C $dist_dir update-index --refresh
