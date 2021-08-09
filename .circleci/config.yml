@@ -64,11 +64,17 @@ jobs:
     <<: *docker-defaults
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "d9:1c:c0:b8:71:7b:8d:00:d3:e0:28:1c:9c:ec:6a:e0"
       - <<: *test_dev
   test-prod:
     <<: *docker-defaults
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "d9:1c:c0:b8:71:7b:8d:00:d3:e0:28:1c:9c:ec:6a:e0"
       - <<: *test_dev
 
 workflows:
