@@ -14,7 +14,9 @@ if [[ " dev prod " != *" $1 "* ]]; then
 fi
 
 git submodule sync && git submodule update --init
-git -C $dist_dir config core.autocrlf true
+git config --global core.safecrlf false
+git config --global core.autocrlf false
+git add --renormalize . && git -C $dist_dir add --renormalize .
 git -C $dist_dir checkout master && git -C $dist_dir pull
 
 ./compile.sh $1
@@ -25,3 +27,4 @@ if ! git -C $dist_dir diff-index --quiet HEAD --; then
 else
   echo "Success! Compile $1 shows no changes"
 fi
+
