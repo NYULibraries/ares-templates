@@ -14,6 +14,7 @@ if [[ " dev prod " != *" $1 "* ]]; then
 fi
 
 git submodule sync && git submodule update --init
+git -C $dist_dir config core.autocrlf true
 git -C $dist_dir checkout master && git -C $dist_dir pull
 
 ./compile.sh $1
