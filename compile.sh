@@ -6,7 +6,7 @@ subdir_list_prod="AresAuth           RemoteAuth"
 
 if [[ -z "$1" ]]; then
   echo "Usage: "
-  echo " $0 <env>"
+  echo " $0 <env> (<filepath>)"
   exit
 fi
 
@@ -21,5 +21,5 @@ fi
 
 for subdir in $subdir_list
 do
-  rsync -a -v src/ $dist_dir/$subdir
+  rsync -a -v src/$2 $dist_dir/$subdir
 done

@@ -67,6 +67,12 @@ Before merging into `master`, compile into the production directories:
 ./compile.sh prod
 ```
 
+If you want to compile only a specific file or path:
+
+```
+./compile.sh dev AboutAres.html
+```
+
 ### Environments
 
 #### TestWeb
