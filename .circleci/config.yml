@@ -40,14 +40,10 @@ workflows:
   deploy:
     jobs:
       - test-dev:
-          requires:
-            - build-image
           filters:
             branches:
               ignore: master
       - test-prod:
-          requires:
-            - build-image
           filters:
             branches:
               only: master
