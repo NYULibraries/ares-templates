@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - User Information</title>
+	<#INCLUDE filename="include_head.html">
+</head>
+<body id="type-b">
+	<div id="wrap">
+		<#INCLUDE filename="include_header.html">
+		<div id="content-wrap">
+			<#INCLUDE filename="include_menu.html">
+			<div id="content">
+				<main tabindex="-1">
+					<form action="ares.dll" method="post" name="ChangeUserInformation" class="f-wrap-request">
+						<input type="hidden" name="Action" value="11"/>
+						<input type="hidden" name="Form" value="<#PARAM name="Form"/>"/>
+						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+						<input type="hidden" name="FirstName" value="<#PARAM name="FirstName">">
+						<input type="hidden" name="LastName" value="<#PARAM name="LastName">">
+						<input type="hidden" name="LibraryID" value="<#PARAM name="LibraryID">">
+						<input type="hidden" name="EmailAddress" value="<#PARAM name="EmailAddress">">
+						<input type="hidden" name="Department" value="<#PARAM name="Department">">
+						<input type="hidden" name="StatusGroup" value="<#PARAM name="StatusGroup"/>">
+						<input type="hidden" name="ExternalUserID" value="<#PARAM name="Username">">
+
+
+						<fieldset>
+						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+							<h1 tabindex="0">User Information</h1>
+							<legend class="offscreen">User Information</legend>
+							<span style="background-color:#E0D5E8 ;font-size: 110%" tabindex="0" aria-live="assertive"><#STATUS></span>
+
+							<label for="Username"><#ERROR Name="ERRORUsername">
+								<strong>
+									<span class="req">*</span>
+									<span class="<#VALIDATION name="ERRORUsername">">Username</span>
+								</strong>
+								<input id="Username" name="Username" type="text" size="40" class="f-name" value="<#PARAM name="Username"/>" disabled="disabled"><br />
+							</label>
+
+							<label for="FirstName"><#ERROR Name="ERRORFirstName">
+								<strong>
+									<span class="req">*</span>
+									<span class="<#VALIDATION name="ERRORFirstName">">First Name</span>
+								</strong>
+								<input id="FirstName" name="FirstName" type="text" size="40" class="f-name" value="<#PARAM name="FirstName"/>" disabled="disabled"><br />
+							</label>
+
+							<label for="LastName"><#ERROR Name="ERRORLastName">
+								<strong>
+									<span class="req">*</span>
+									<span class="<#Validation name="ERRORLastName">">Last Name</span>
+								</strong>
+								<input id="LastName" name="LastName" type="text" size="40" class="f-name" value="<#PARAM name="LastName"/>" disabled="disabled"><br />
+							</label>
+
+							<label for="EmailAddress"><#ERROR Name="ERROREmailAddress">
+								<strong>
+									<span class="req">*</span>
+									<span class="<#Validation name="ERROREmailAddress">">Email Address</span>
+								</strong>
+								<input id="EmailAddress" name="EmailAddress" type="text" size="40" class="f-name" value="<#PARAM name="EmailAddress"/>" disabled="disabled"><br />
+							</label>
+
+							<label for="Department"><#ERROR name="ERRORDepartment">
+								<strong>
+									<span class="req">*</span>
+									<span class="<#Validation name="ERRORDepartment">">Department</span>
+								</strong>
+								<input id="Department" name="Department" type="text" size="40" class="f-name" value="<#PARAM name="Department"/>" disabled="disabled"><br />
+							</label>
+
+							<label for="StatusGroup"><#ERROR name="ERRORStatusGroup">
+								<strong>
+									<span class="<#Validation name="ERRORStatusGroup">">Status</span>
+								</strong>
+								<input id="StatusGroup" name="StatusGroup" type="text" size="40" class="f-name" value="<#PARAM name="StatusGroup"/>" disabled="disabled"><br />
+							</label>
+
+							<span style ="display: block; background-color: #E0D5E8; font-size: 110%;">Contact Course Reserve Staff to Change User Information</span>
+						
+
+						</fieldset>
+					</form>
+				</main>
+
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

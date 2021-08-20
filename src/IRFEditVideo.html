@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ares - Edit Item <#ITEM field="ItemID"/></title>
+	<#INCLUDE filename="include_head.html">
+</head>
+<body id="type-b">
+	<div id="wrap"> 
+	  <#INCLUDE filename="include_header.html"> 
+	  <#INCLUDE filename="include_setItemFieldsAsReadOnly.html">  
+	  <div id="content-wrap">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseInstructor">
+			<#INCLUDE filename="include_instructorcoursemenu.html" restriction="Usertype:CourseFullProxy">
+			<#INCLUDE filename="include_courseproxycoursemenu.html" restriction="Usertype:CourseProxy">
+			<div id="content">
+				<main tabindex="-1">
+					<form data-accessibility="true" action="ares.dll" method="post" name="CreateItem" class="f-wrap-request">
+						<input type="hidden" name="Action" value="11"/>
+						<input type="hidden" name="CourseID" value="<#COURSE field="CourseID"/>"/>				
+						<input type="hidden" name="ItemID" value="<#ITEM field="ItemID"/>">
+						<input type="hidden" name="Type" value="30"/>							
+						<input type="hidden" name="ItemType" value="MON"/>
+						<input type="hidden" name="SessionID" value="<#PARAM name="SessionID">">
+						
+						<div class="req" tabindex="0"><strong>*</strong> Indicates required field</div>
+						<fieldset aria-labelledby="edit_reserve_item_video_heading">
+							<h1 tabindex="0" id="edit_reserve_item_video_heading">Edit Reserve Item: Video/Audio</h1>
+
+							<span class="error_status" tabindex="0" aria-describedby="error_status_description" aria-live="assertive"><#STATUS></span>
+							<span id="error_status_description">Error status</span>
+							<p><#INCLUDE filename="include_viewdelete.html"></p>
+
+							<div id="LoanPeriodDiv"><#OPTION name="LoanPeriod" isSharedListItem="False" SitePeriods="True" headerText="<label for='LoanPeriod'><#ERROR Name='ERRORLoanPeriod'><strong><span class='<#VALIDATION name='ERRORLoanPeriod'>'>Loan Period for Physical Items</span></strong>" footerText="<br /></label>"></div>
+							
+							<label for="ItemFormat"><#ERROR name="ERRORItemFormat">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORItemFormat">">Select an item type <span class="sr-only">(required)</span></span>
+								</strong>
+								<select name="Format" id="ItemFormat"> 
+									<option selected><#PARAM name="ItemFormat"></option>								
+									<option value="CD audio">CD audio</option>
+									<option value="DVD">DVD</option>
+									<option value="Streaming">Streaming</option>
+									<option value="VHS/Videotape">VHS/Videotape</option>
+									<option value="Vinyl audio">Vinyl audio</option>
+								</select><br />
+							</label>
+
+							<label for="Title"><#ERROR Name="ERRORTitle">					         		
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORTitle">">Title</span><br />
+									<span class="note" aria-hidden="true" id="title_note">(As shown in Bobcat)</span>
+								</strong>
+								<input aria-describedby="title_note" aria-required="true" required="true" name="Title" id="Title" type="text" size="20" class="f-name" value="<#PARAM name="Title"/>"/><br />
+							</label>
+	
+							<label for="Author"><#ERROR Name="ERRORAuthor">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORAuthor">">Director/Recording Artist</span><br/>
+									<span class="note">(Last Name, First Name)</span>
+								</strong>
+								<input aria-required="true" required="true" id="Author" name="Author" type="text" size="40" class="f-name" value="<#PARAM name="Author"/>"><br />
+							</label>
+							
+							<label for="Publisher"><#ERROR Name="ERRORPublisher">					
+								<strong>
+									<span class="<#VALIDATION name="ERRORPublisher">">Publisher/Record Label</span>
+								</strong>
+								<input id="Publisher" name="Publisher" type="text" size="40" class="f-name" value="<#PARAM name="Publisher"/>"><br />
+							</label>
+						
+							<label for="PubDate"><#ERROR Name="ERRORPubDate">					          		
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORPubDate">">Date of Publication</span>
+								</strong>
+								<input id="PubDate" name="PubDate" type="text" size="40" class="f-name" value="<#PARAM name="PubDate"/>"><br />
+							</label>
+							
+							<label for="CallNumber"><#ERROR name="ERRORCallNumber">
+								<strong>
+									<span class="<#VALIDATION name="ERRORCallNumber">">Is the video or audio recording in BobCat as a physical item?</span><br />
+									<span class="note" aria-hidden="true" id="call_number_note">If yes, indicate the call number, including the prefix DVD, VHS, XCD, or XLP. <br /><br />NOTE: Conventional DVD is the default format for video streaming. BluRay and VHS require extra processing time and will be digitized only if they are the only available option.</span>
+								</strong>
+								<input aria-describedby="call_number_note" id="CallNumber" name="CallNumber" type="text" size="20" class="f-name" value="<#PARAM name="CallNumber"/>"><br />
+							</label>
+							
+							<label for="ItemInfo3"><#ERROR name="ERRORItemInfo3">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORItemInfo3">">Alternate Edition Acceptable? <span class="sr-only">(required)</span></span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo3" SelectedValue="<#PARAM name="ItemInfo3">" Size="1"><br />
+							</label>
+							
+							<label for="NeededBy"><#ERROR name="ERRORNeededBy">
+								<strong>
+									<span class="<#VALIDATION name="ERRORNeededBy">">Date Needed By</span>
+								</strong>
+								<input id="NeededBy" name="NeededBy" type="text" size="40" class="f-name" value="<#PARAM name="NeededBy">"><br />
+							</label>
+	
+							<label for="Location"><#ERROR name="ERRORLocation">
+								<strong>
+									<span class="<#VALIDATION name="ERRORLocation">">Is the video or audio recording in BobCat as an online streaming link?</span><br />
+									<span class="note" aria-hidden="true" id="location_note">If yes, copy and paste the Permalink here.</span>
+								</strong>
+								<input aria-describedby="location_note" id="Location" name="Location" type="text" size="40" class="f-name" value="<#PARAM name="Location">"><br />
+							</label>
+
+							<label for="CitedIn"><#ERROR name="ERRORCitedIn">
+								<strong>
+									<span class="<#VALIDATION name="ERRORCitedIn">">If the item is not already in BobCat, where did you find it cited?</span><br />
+									<span class="note" aria-hidden="true" id="citedin_note">(Please indicate your source and the URL if possible)</span>
+								</strong>
+								<input aria-describedby="citedin_note" id="CitedIn" name="CitedIn" type="text" size="40" class="f-name" value="<#PARAM name="CitedIn">"><br />
+							</label>
+							
+							<label for="NatureOfWork"><#ERROR name="ERRORNatureOfWork">
+								<strong>
+									<span class="<#VALIDATION name="ERRORNatureOfWork">">For audio recordings, do you want the entire album or selected excerpt(s)?</span>
+								</strong>
+								<#OPTION name="Custom" GroupName="NatureOfWork" SelectedValue="<#PARAM name="NatureOfWork">" Size="1"><br />
+							</label>
+
+							<label for="ItemNote"><#ERROR name="ERRORItemNote">
+								<strong>
+									<span class="<#VALIDATION name="ERRORItemNote">">If excerpt(s), please describe as clearly as possible, with song titles, track numbers, etc. (Maximum of 5: more than that will default to the whole album).</span><br />
+									<span class="note" aria-hidden="true" id="notes_note">NOTE: Excerpting available for audio recordings only. Scene selections/clips not possible for videos.</span>
+								</strong>
+								<textarea aria-describedby="notes_note" id="Notes" name="ItemNote" rows="2" cols="40" class="f-name"><#PARAM Name="ItemNote"/></textarea>
+								<br />
+								<#TABLE class="instructor-table-nohover" name="ItemNotes" headerText="Previous Notes" noDataAction="ShowNothing" noDataMessage="No Notes" column="Note" column="AddedBy" column="NoteDate" column="NoteType" ExcludeNoteTypes="Staff,Copyright">
+							</label>
+
+							<label for="ItemInfo5"><#ERROR name="ERRORItemInfo5">
+								<strong>
+									<span class="<#VALIDATION name="ERRORItemInfo5">">Include scans of accompanying booklet and outer covers?</span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo5" SelectedValue="<#PARAM name="ItemInfo5">" Size="1"><br />
+							</label>
+						
+							<#TABLE class="instructor-table filterTable" name="CourseItemRestrictions" courseChoice="one" headerText="Reserve Restrictions" courseChoice="one" column=CourseCheck: column=CourseNumber column=Name column=Semester column=StartDate column=StopDate IncludeJavascriptCalendar="No" calendarText="" />													
+							
+							<input type="hidden" name="CopyrightRequired" value="<#PARAM name="CopyrightRequired"/>">
+							<input type="hidden" name="CopyrightObtained" value="<#PARAM name="CopyrightObtained"/>">
+									
+							<input class="f-submit" type="submit" name="SubmitButton" value="Submit Item" />
+							<input class="f-submit" type="reset" name="ClearButton" value="Clear" />								
+	
+						</fieldset>
+					</form>			
+				</main>
+
+				<div id="footer" role="contentinfo">
+					<p><#COPYRIGHT></p>
+					<#INCLUDE filename="include_footer.html">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

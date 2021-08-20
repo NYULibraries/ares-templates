@@ -24,9 +24,9 @@ ISLRF = Instructor Shared List Request Form
 
 We don't use the shared list functionality (i.e. `ISLRF`), so those forms shouldn't matter much.
 
-## Connecting to ARes server
+## Connecting to ARes files
 
-You can SFTP (or use `lftp` for automation) to the ARes server with the credentials provided by the vendor. There are two root folders: `RemoteAuth` and `AresAuth`. We are using both depending on where the user comes from. `RemoteAuth` directory will forward users to the institution's SSO screen to login, but the `AresAuth` one is the one used from within NYU Classes. The functionality is supposed to be identical.
+Atlas stores ARes files on a separate github repository with four directories: two "dev" directories (AresAuth_TestWeb and RemoteAuth_TestWeb) and two "prod" directories (AresAuth and RemoteAuth). We are using both depending on where the user comes from. `RemoteAuth` directory will forward users to the institution's SSO screen to login, but the `AresAuth` one is the one used from within NYU Classes. The functionality is supposed to be identical.
 
 The two URLs are:
 
@@ -37,43 +37,41 @@ RemoteAuth authenticates via Shibboleth, while AresAuth authenticates via NYU Cl
 
 ### Usage
 
-Make your changes in the `./dist` directory and run `./ftp.sh` to deploy changes to the ARes server. You must set `$SFTP_USERNAME` and `$SFTP_PASSWORD` environment variables to authenticate.
+Initialize the submodule with Atlas's repository:
 
-To deploy all files to TestWeb:
+```
+git submodule sync && git submodule update --init
+```
 
-`./dist.sh`
+Pull in any changes from Atlas's upstream repository:
 
-To deploy a specific file to TestWeb:
+```
+./load_upstream.sh
+```
 
-`./dist.sh 'include_header.html'`
+This defaults to pulling in changes from the `AresAuth_TestWeb` directory, but you can alternatively specify (another) directory:
 
-To deploy all files to production:
+```
+./load_upstream.sh RemoteAuth_TestWeb
+```
 
-`./dist.sh '*.html' prod`
+Once you make your changes in `./src` directory, then compile the changes into the dev (*TestWeb) directories:
 
-To deploy a specific file to production:
+```
+./compile.sh dev
+```
 
-`./dist.sh 'include_header.html' prod`
+Before merging into `master`, compile into the production directories:
 
-## Docker
+```
+./compile.sh prod
+```
 
-Again, you must set credentials in environment variables either on the host or via an env file.
+If you want to compile only a specific file or path:
 
-To deploy all files to TestWeb:
-
-`docker-compose run deploy`
-
-To deploy a specific file to TestWeb:
-
-`docker-compose run deploy 'include_header.html'`
-
-To deploy all files to production:
-
-`docker-compose run deploy '*.html' prod`
-
-To deploy a specific file to production:
-
-`docker-compose run deploy 'include_header.html' prod`
+```
+./compile.sh dev AboutAres.html
+```
 
 ### Environments
 

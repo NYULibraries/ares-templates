@@ -1,0 +1,13 @@
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script>
+if($) {
+  $(document).ready(function() {
+      $("div.row a").each(function() {
+    var _this = $(this);
+    if (_this.text() == " View this item") {
+        _this.attr("target", "_blank");
+    }
+      });
+  });
+ }
+</script>

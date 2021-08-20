@@ -1,0 +1,30 @@
+<div id="utility" role="navigation">
+	
+	<ul id="nav-secondary">
+		<li class="active"><a href="<#ACTION action="99">">Logoff <#PARAM name="Username"></a></li>
+		<#SWITCHMODE headerText="<li class='active'>" footerText="</li>">
+		<li class="active"><a href="<#ACTION action="10" form="10">">Main Menu</a></li>
+		<li class="active"><span class="nav-section" tabindex="0">Student Course Tools</span>
+			<ul>
+				<li class="first last"><a href="<#ACTION action="10" form="60" ValueType="Lookup" Value="CourseID">">Course Home</a></li>
+			</ul>
+		</li>
+		<#INCLUDE filename="include_instructormenu.html" restriction="UserType:Instructor">
+		<#INCLUDE filename="include_studentmenu.html" restriction="UserType:Student">
+		<li class="active"><span class="nav-section" tabindex="0">Need help?</span>
+			<ul>
+				<li class="first"><a href="https://nyu.qualtrics.com/jfe/form/SV_81GYe1SbEoASbit" target="_blank">Contact staff</a></li>
+			</ul>
+		</li>
+		<li class="active"><span class="nav-section" tabindex="0">Tools</span>
+			<ul>
+				<li class="first"><a href="<#ACTION action="20" form="81">">Review User Information</a></li>
+			</ul>
+		</li>
+		<li class="active"><span class="nav-section" tabindex="0">Alerts</span>
+			<ul>
+				<li class="first"><span id="alertsgroup"><#ALERTS NoDataAction="showMessage" AllowAjax="Yes"></span></li>
+			</ul>
+		</li>
+	</ul>
+</div>
