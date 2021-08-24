@@ -73,6 +73,8 @@ If you want to compile only a specific file or path:
 ./compile.sh dev AboutAres.html
 ```
 
+Then commit changes directory to the submodule to deploy.
+
 ### Environments
 
 #### TestWeb
