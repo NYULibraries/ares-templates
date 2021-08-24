@@ -42,7 +42,7 @@ input.f-submit:hover, button.f-submit:hover, #search input.f-submit:hover, table
 #header input.f-submit:hover {
     color: #22272D;
 }
-main button, main input[type='reset'], main input[type='submit'], main input[type='button'] {
+main button, main input[type='reset'], main input[type='submit'], main input[type='button'], .button-link a {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -58,7 +58,7 @@ main button, main input[type='reset'], main input[type='submit'], main input[typ
     display: inline-block !important;
     margin: 10px !important;
 }
-main button:hover, main input[type='reset']:hover, main input[type='submit']:hover, main input[type='button']:hover {
+main button:hover, main input[type='reset']:hover, main input[type='submit']:hover, main input[type='button']:hover, .button-link a {
     background: #6c07ae !important;
     color: #fff !important;
 }
