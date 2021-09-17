@@ -208,3 +208,9 @@ tbody tr:hover {
 thead th {
     font-weight: normal !important;
 }
+.tip h2 {
+    color: #57068C;
+}
+.tip {
+    margin: 4em 0;
+}
