@@ -127,6 +127,28 @@
 								</strong>
 								<textarea id="ItemTags" name="ItemTags" rows="4"><#ITEM field="Tags" TagType="Instructor"/></textarea><br />
 							</label>
+
+							<label for="ItemInfo2"><#ERROR name="ERRORItemInfo2">
+								<strong>
+									<span class="<#VALIDATION name="ERRORItemInfo2">">Is this a required book that students must purchase?</span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo2" SelectedValue="<#PARAM name=ItemInfo2>" Size="1"><br />
+							</label>
+							
+							<label for="ItemInfo3"><#ERROR name="ERRORItemInfo3">
+								<strong>
+									<span aria-hidden="true" class="req">*</span>
+									<span class="<#VALIDATION name="ERRORItemInfo3">">Alternate Edition Acceptable? <span class="sr-only">(required)</span></span>
+								</strong>
+								<#OPTION name="Custom" GroupName="ItemInfo3" SelectedValue="<#PARAM name=ItemInfo3>" Size="1"><br />
+							</label>
+	
+							<label for="ItemInfo4"><#ERROR name="ERRORItemInfo4">
+								<strong>
+									<span class="<#VALIDATION name="ERRORItemInfo4">">If Yes, Specify Alternate Edition</span>
+								</strong>
+								<input id="ItemInfo4" name="ItemInfo4" type="text" size="20" class="f-name" value="<#PARAM Name="ItemInfo4"/>"><br />
+							</label>
 	
 							<label><#ERROR name="ERRORSupplyMethod">
 								<strong>
