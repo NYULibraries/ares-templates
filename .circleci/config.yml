@@ -16,7 +16,7 @@ test_prod: &test_prod
     command: |
       ./test_compile.sh prod
 
-version: 2
+version: 2.1
 jobs:
   test-dev:
     <<: *docker-defaults
@@ -36,7 +36,6 @@ jobs:
       - <<: *test_dev
 
 workflows:
-  version: 2
   deploy:
     jobs:
       - test-dev:
