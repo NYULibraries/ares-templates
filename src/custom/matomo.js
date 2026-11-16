@@ -5,10 +5,10 @@ if (window.location.hostname === 'ares.library.nyu.edu' && window.location.pathn
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u = "https://nyulib.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u + 'matomo.php']);
+    var u="https://nyulib.matomo.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '21']);
-    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-    g.async = true; g.src = '//cdn.matomo.cloud/nyulib.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g, s);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='//cdn.matomo.cloud/nyulib.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 }
